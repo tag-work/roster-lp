@@ -5,88 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プライバシーポリシー — Roster</title>
 <meta name="description" content="Roster のプライバシーポリシー。あなたの記録は端末内で処理され、外部に送信されません。">
-<meta name="theme-color" content="#0e0c0a">
+<meta name="theme-color" content="#100d0b">
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0e0c0a;--bg-2:#161210;--panel:#1d1815;--line:#2c2520;
-    --ink:#f4ede3;--ink-dim:#a99e90;--ink-faint:#6f655a;
-    --accent:#eeab4a;--accent-2:#f0c479;
-    --serif:'Bodoni Moda',serif;--sans:'Zen Kaku Gothic New',sans-serif;
-  }
+  :root{--bg:#100d0b;--bg-2:#171310;--panel:#1e1916;--line:#2e2722;--ink:#f3ece2;--ink-2:#c4baac;--ink-soft:#8d8273;--accent:#eeab4a;--accent-2:#f2c47e;--accent-soft:#3a2c18;--serif:'Fraunces',serif;--sans:'Zen Kaku Gothic New',sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
-  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
-
-  /* nav */
-  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-    padding:18px 28px;backdrop-filter:blur(12px);background:rgba(14,12,10,.85);border-bottom:1px solid var(--line)}
-  .brand{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 32px}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.82);border-bottom:1px solid var(--line)}
+  .brand{font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:.04em;color:var(--ink);text-decoration:none}
   .brand .dot{color:var(--accent)}
-  .back{font-size:13px;color:var(--ink-dim);text-decoration:none;transition:color .2s}
+  .back{font-size:13px;color:var(--ink-2);text-decoration:none;transition:color .2s}
   .back:hover{color:var(--accent)}
-
-  /* header */
-  .head{padding:80px 0 48px;border-bottom:1px solid var(--line);
-    background:radial-gradient(120% 80% at 80% 0%,rgba(238,171,74,.10),transparent 55%)}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:20px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--accent)}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.1;letter-spacing:-.01em}
-  h1 .ja{display:block;font-family:var(--sans);font-weight:900;font-size:.5em;margin-top:14px;letter-spacing:.02em}
-  .updated{margin-top:22px;font-size:13px;color:var(--ink-faint);letter-spacing:.04em}
-
-  /* lede */
-  .lede{padding:48px 0;border-bottom:1px solid var(--line)}
-  .lede p{font-size:18px;color:var(--ink);line-height:1.9}
-  .lede .hl{color:var(--accent-2);font-weight:700}
-
-  /* sections */
-  main{padding:20px 0 80px}
-  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  .head{padding:92px 0 54px;text-align:center;background:radial-gradient(75% 55% at 50% 0%,rgba(238,171,74,.12),transparent 68%),var(--bg);border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:20px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.4vw,54px);line-height:1.18;letter-spacing:.005em}
+  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:.42em;margin-top:18px;color:var(--ink-2)}
+  .updated{margin-top:24px;font-size:13px;color:var(--ink-soft);letter-spacing:.03em}
+  .lede{padding:54px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .lede p{font-size:17px;color:var(--ink);line-height:2;text-align:center;max-width:34em;margin:0 auto;font-weight:400}
+  .lede .hl{color:var(--accent-2);font-weight:500}
+  main{padding:24px 0 90px}
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
   section:last-child{border-bottom:none}
-  h2{font-family:var(--serif);font-weight:600;font-size:26px;margin-bottom:8px;display:flex;align-items:baseline;gap:14px}
-  h2 .no{font-size:15px;color:var(--accent);font-weight:600;letter-spacing:.05em}
-  h2 .ja-sub{font-family:var(--sans);font-size:13px;color:var(--ink-faint);font-weight:500;letter-spacing:.04em}
-  h3{font-size:16px;font-weight:700;margin:26px 0 8px;color:var(--accent-2)}
-  p{color:var(--ink-dim);margin:12px 0;font-size:15.5px}
-  p strong,li strong{color:var(--ink);font-weight:700}
+  h2{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:8px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h2 .no{font-size:13px;color:var(--accent);background:var(--accent-soft);font-weight:500;width:30px;height:30px;border-radius:9px;display:inline-grid;place-items:center;font-family:var(--serif)}
+  h2 .ja-sub{font-family:var(--sans);font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.03em}
+  p{color:var(--ink-2);margin:13px 0;font-size:16px;line-height:1.95}
+  p strong,li strong{color:var(--ink);font-weight:500}
   ul{list-style:none;margin:14px 0}
-  li{color:var(--ink-dim);font-size:15px;padding:7px 0 7px 24px;position:relative}
-  li::before{content:"";position:absolute;left:4px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7}
-
-  .callout{background:linear-gradient(150deg,rgba(238,171,74,.10),rgba(238,171,74,.02));
-    border:1px solid rgba(238,171,74,.25);border-radius:16px;padding:24px 26px;margin:24px 0}
-  .callout .ct{font-weight:700;color:var(--accent-2);font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:9px}
-  .callout p{margin:6px 0 0;color:var(--ink-dim);font-size:15px}
-
-  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(238,171,74,.4);transition:border-color .2s}
+  li{color:var(--ink-2);font-size:15.5px;padding:8px 0 8px 26px;position:relative;line-height:1.9}
+  li::before{content:"";position:absolute;left:5px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .callout{background:linear-gradient(150deg,rgba(238,171,74,.1),rgba(238,171,74,.02));border:1px solid rgba(238,171,74,.2);border-radius:18px;padding:26px 28px;margin:24px 0}
+  .callout .ct{font-weight:500;color:var(--accent-2);font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+  .callout p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px}
+  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(238,171,74,.35);transition:border-color .2s}
   a.inline:hover{border-color:var(--accent)}
-
-  /* footer */
-  footer{border-top:1px solid var(--line);padding:42px 0 60px;background:var(--bg-2)}
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;background:var(--bg-2)}
   .foot-grid{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .foot-brand{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.12em}
+  .foot-brand{font-family:var(--serif);font-size:20px;font-weight:500;text-decoration:none;color:var(--ink)}
   .foot-brand .dot{color:var(--accent)}
-  .foot-links{display:flex;gap:24px;flex-wrap:wrap}
-  .foot-links a{color:var(--ink-dim);text-decoration:none;font-size:13px;transition:color .2s}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap}
+  .foot-links a{color:var(--ink-2);text-decoration:none;font-size:13.5px;transition:color .2s}
   .foot-links a:hover{color:var(--accent)}
-  .copy{margin-top:26px;font-size:12px;color:var(--ink-faint)}
-
-  @media(max-width:600px){.head{padding:56px 0 38px}section{padding:34px 0}h2{flex-direction:column;gap:4px}}
+  .copy{margin-top:26px;font-size:12.5px;color:var(--ink-soft)}
+  @media(max-width:600px){.head{padding:66px 0 42px}section{padding:38px 0}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="brand">Roster<span class="dot">.</span></a>
   <a href="/" class="back">← トップへ戻る</a>
 </nav>
-
 <header class="head">
   <div class="wrap">
     <span class="eyebrow">Privacy Policy</span>
@@ -94,18 +68,15 @@
     <p class="updated">最終更新日：2026年5月23日 / 施行日：2026年5月23日</p>
   </div>
 </header>
-
 <div class="lede">
   <div class="wrap">
-    <p>Roster（以下「本アプリ」）は、最もプライベートな記録を扱うアプリです。だからこそ、私たちは設計の中心にプライバシーを置きました。<span class="hl">本アプリで記録されたあなたのデータは、あなたの端末内で処理・保存され、私たちのサーバーや第三者に送信されることはありません。</span></p>
+    <p>Roster（以下「本アプリ」）は、最もプライベートな記録を扱うアプリです。だからこそ、設計の中心にプライバシーを置きました。<span class="hl">記録されたあなたのデータは、あなたの端末内で処理・保存され、私たちのサーバーや第三者に送信されることはありません。</span></p>
   </div>
 </div>
-
 <main>
 <div class="wrap">
-
   <section>
-    <h2><span class="no">01</span>事業者情報<span class="ja-sub">Who we are</span></h2>
+    <h2><span class="no">1</span>事業者情報<span class="ja-sub">Who we are</span></h2>
     <p>本アプリは個人開発者（以下「開発者」）によって提供されています。本ポリシーに関するお問い合わせは、末尾の連絡先までご連絡ください。</p>
     <ul>
       <li><strong>アプリ名：</strong>Roster</li>
@@ -113,9 +84,8 @@
       <li><strong>お問い合わせ：</strong><a class="inline" href="mailto:hello@roster.ink">hello@roster.ink</a></li>
     </ul>
   </section>
-
   <section>
-    <h2><span class="no">02</span>取得・保存するデータ<span class="ja-sub">What we store</span></h2>
+    <h2><span class="no">2</span>取得・保存するデータ<span class="ja-sub">What we store</span></h2>
     <p>本アプリでは、あなたが手動で入力した以下の情報を<strong>あなたの端末内にのみ</strong>保存します。これらはあなた自身が記録する目的で入力するものであり、開発者がこれらの内容を閲覧・収集することはありません。</p>
     <ul>
       <li>パートナーに関する情報（あなたが任意で設定した名称・カテゴリ・メモ・出会いの経緯など）</li>
@@ -129,15 +99,13 @@
       <p>これらのデータは、お使いの iPhone 内のローカルデータベースに保存されます。本アプリは、これらの記録内容を外部のサーバーへ送信しません。記録はあなたの端末から外に出ることなく、あなただけが管理します。</p>
     </div>
   </section>
-
   <section>
-    <h2><span class="no">03</span>データを外部送信しないこと<span class="ja-sub">No external transmission</span></h2>
+    <h2><span class="no">3</span>データを外部送信しないこと<span class="ja-sub">No external transmission</span></h2>
     <p>本アプリは、あなたが記録した活動内容・パートナー情報・体調記録などの個人的なデータを、開発者を含むいかなる第三者にも送信しません。これらの情報は分析・広告・販売のいずれの目的にも利用されません。</p>
     <p>本アプリには、行動追跡を目的とした第三者のトラッキング SDK や広告ネットワークを組み込んでいません。</p>
   </section>
-
   <section>
-    <h2><span class="no">04</span>端末内のセキュリティ<span class="ja-sub">On-device security</span></h2>
+    <h2><span class="no">4</span>端末内のセキュリティ<span class="ja-sub">On-device security</span></h2>
     <p>本アプリは、あなたのプライバシーを守るため、端末内でのアクセス保護機能を提供します。</p>
     <ul>
       <li><strong>アプリロック：</strong>端末の生体認証（Face ID など）またはパスコードによる起動時のロックに対応しています。</li>
@@ -145,35 +113,29 @@
     </ul>
     <p>ただし、端末そのもののセキュリティ（パスコード設定、紛失時の対応など）はお客様ご自身で管理いただく必要があります。</p>
   </section>
-
   <section>
-    <h2><span class="no">05</span>App内課金<span class="ja-sub">In-app purchases</span></h2>
+    <h2><span class="no">5</span>App内課金<span class="ja-sub">In-app purchases</span></h2>
     <p>本アプリは、追加機能を利用できる有料プラン（App内課金）を提供する場合があります。課金処理は Apple の App Store / StoreKit を通じて行われ、決済情報（クレジットカード情報など）は Apple によって処理されます。<strong>開発者がお客様の決済情報を取得・保存することはありません。</strong></p>
     <p>購入・返金・サブスクリプションの管理については、Apple の定める条件およびプライバシーポリシーが適用されます。</p>
   </section>
-
   <section>
-    <h2><span class="no">06</span>iCloud・バックアップ<span class="ja-sub">iCloud &amp; backup</span></h2>
+    <h2><span class="no">6</span>iCloud・バックアップ<span class="ja-sub">iCloud &amp; backup</span></h2>
     <p>本アプリは、将来的に、機種変更時のデータ引き継ぎを目的とした iCloud 同期機能を提供する場合があります。この機能を提供・有効化した場合、あなたのデータはあなた自身の Apple アカウントに紐づく iCloud 上に保存されます。この場合も、データは Apple の暗号化されたインフラ上であなたの管理下に置かれ、開発者がその内容にアクセスすることはありません。</p>
-    <p>iCloud に保存されたデータの取り扱いには、Apple のプライバシーポリシーが適用されます。なお、端末の標準バックアップ（iCloud バックアップ等）を有効にしている場合、本アプリのデータが端末バックアップの一部として含まれることがあります。</p>
+    <p>iCloud に保存されたデータの取り扱いには、Apple のプライバシーポリシーが適用されます。なお、端末の標準バックアップを有効にしている場合、本アプリのデータが端末バックアップの一部として含まれることがあります。</p>
   </section>
-
   <section>
-    <h2><span class="no">07</span>データの削除<span class="ja-sub">Deleting your data</span></h2>
+    <h2><span class="no">7</span>データの削除<span class="ja-sub">Deleting your data</span></h2>
     <p>あなたはいつでも、本アプリ内で記録したデータを削除できます。また、本アプリをアンインストールすることで、端末内に保存されたデータは削除されます。</p>
     <p>iCloud 同期を利用していた場合、iCloud 上のデータについては Apple の手順に従って削除いただけます。</p>
   </section>
-
   <section>
-    <h2><span class="no">08</span>お子様の利用について<span class="ja-sub">Age restriction</span></h2>
+    <h2><span class="no">8</span>お子様の利用について<span class="ja-sub">Age restriction</span></h2>
     <p>本アプリは成人向けの内容を含むため、17歳以上の方を対象としています。17歳未満の方による利用を意図していません。本アプリは、お子様から意図的に個人情報を収集することはありません。</p>
   </section>
-
   <section>
-    <h2><span class="no">09</span>本ポリシーの変更<span class="ja-sub">Changes</span></h2>
+    <h2><span class="no">9</span>本ポリシーの変更<span class="ja-sub">Changes</span></h2>
     <p>本ポリシーは、法令の改正やアプリの機能追加に伴い、改定される場合があります。重要な変更がある場合は、本ページの更新日を改めるとともに、必要に応じてアプリ内でお知らせします。改定後も本アプリを継続してご利用いただいた場合、変更後のポリシーに同意いただいたものとみなします。</p>
   </section>
-
   <section>
     <h2><span class="no">10</span>お問い合わせ<span class="ja-sub">Contact</span></h2>
     <p>本ポリシーまたはあなたのデータの取り扱いに関するご質問・ご要望は、以下までお問い合わせください。</p>
@@ -182,14 +144,12 @@
       <p><a class="inline" href="mailto:hello@roster.ink">hello@roster.ink</a></p>
     </div>
   </section>
-
 </div>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <a href="/" class="foot-brand" style="text-decoration:none">Roster<span class="dot">.</span></a>
+      <a href="/" class="foot-brand">Roster<span class="dot">.</span></a>
       <nav class="foot-links">
         <a href="/">トップ</a>
         <a href="/privacy">プライバシーポリシー</a>
@@ -200,6 +160,5 @@
     <p class="copy">© 2026 Roster. All rights reserved.</p>
   </div>
 </footer>
-
 </body>
 </html>

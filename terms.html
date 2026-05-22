@@ -5,87 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>利用規約 — Roster</title>
 <meta name="description" content="Roster の利用規約。本アプリをご利用いただく前にお読みください。">
-<meta name="theme-color" content="#0e0c0a">
+<meta name="theme-color" content="#100d0b">
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0e0c0a;--bg-2:#161210;--panel:#1d1815;--line:#2c2520;
-    --ink:#f4ede3;--ink-dim:#a99e90;--ink-faint:#6f655a;
-    --accent:#eeab4a;--accent-2:#f0c479;
-    --serif:'Bodoni Moda',serif;--sans:'Zen Kaku Gothic New',sans-serif;
-  }
+  :root{--bg:#100d0b;--bg-2:#171310;--panel:#1e1916;--line:#2e2722;--ink:#f3ece2;--ink-2:#c4baac;--ink-soft:#8d8273;--accent:#eeab4a;--accent-2:#f2c47e;--accent-soft:#3a2c18;--serif:'Fraunces',serif;--sans:'Zen Kaku Gothic New',sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
-  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
-
-  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-    padding:18px 28px;backdrop-filter:blur(12px);background:rgba(14,12,10,.85);border-bottom:1px solid var(--line)}
-  .brand{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 32px}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.82);border-bottom:1px solid var(--line)}
+  .brand{font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:.04em;color:var(--ink);text-decoration:none}
   .brand .dot{color:var(--accent)}
-  .back{font-size:13px;color:var(--ink-dim);text-decoration:none;transition:color .2s}
+  .back{font-size:13px;color:var(--ink-2);text-decoration:none;transition:color .2s}
   .back:hover{color:var(--accent)}
-
-  .head{padding:80px 0 48px;border-bottom:1px solid var(--line);
-    background:radial-gradient(120% 80% at 80% 0%,rgba(238,171,74,.10),transparent 55%)}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:20px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--accent)}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.1;letter-spacing:-.01em}
-  h1 .ja{display:block;font-family:var(--sans);font-weight:900;font-size:.5em;margin-top:14px;letter-spacing:.02em}
-  .updated{margin-top:22px;font-size:13px;color:var(--ink-faint);letter-spacing:.04em}
-
-  .lede{padding:48px 0;border-bottom:1px solid var(--line)}
-  .lede p{font-size:17px;color:var(--ink);line-height:1.9}
-  .lede .hl{color:var(--accent-2);font-weight:700}
-
-  main{padding:20px 0 80px}
-  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  .head{padding:92px 0 54px;text-align:center;background:radial-gradient(75% 55% at 50% 0%,rgba(238,171,74,.12),transparent 68%),var(--bg);border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:20px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.4vw,54px);line-height:1.18;letter-spacing:.005em}
+  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:.42em;margin-top:18px;color:var(--ink-2)}
+  .updated{margin-top:24px;font-size:13px;color:var(--ink-soft);letter-spacing:.03em}
+  .lede{padding:54px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .lede p{font-size:16.5px;color:var(--ink);line-height:2;text-align:center;max-width:36em;margin:0 auto;font-weight:400}
+  .lede .hl{color:var(--accent-2);font-weight:500}
+  main{padding:24px 0 90px}
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
   section:last-child{border-bottom:none}
-  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin-bottom:8px;display:flex;align-items:baseline;gap:14px}
-  h2 .no{font-size:15px;color:var(--accent);font-weight:600;letter-spacing:.05em}
-  h2 .ja-sub{font-family:var(--sans);font-size:13px;color:var(--ink-faint);font-weight:500;letter-spacing:.04em}
-  p{color:var(--ink-dim);margin:12px 0;font-size:15.5px}
-  p strong,li strong{color:var(--ink);font-weight:700}
-  ol{margin:14px 0 14px 4px;counter-reset:item;list-style:none}
-  ol>li{color:var(--ink-dim);font-size:15px;padding:7px 0 7px 30px;position:relative;counter-increment:item}
-  ol>li::before{content:counter(item);position:absolute;left:0;top:9px;width:20px;height:20px;border-radius:6px;
-    background:rgba(238,171,74,.12);border:1px solid rgba(238,171,74,.28);color:var(--accent);
-    font-size:11px;font-weight:700;display:grid;place-items:center;font-family:var(--serif)}
+  h2{font-family:var(--serif);font-weight:400;font-size:25px;margin-bottom:8px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h2 .no{font-size:13px;color:var(--accent);background:var(--accent-soft);font-weight:500;width:30px;height:30px;border-radius:9px;display:inline-grid;place-items:center;font-family:var(--serif)}
+  h2 .ja-sub{font-family:var(--sans);font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.03em}
+  p{color:var(--ink-2);margin:13px 0;font-size:16px;line-height:1.95}
+  p strong,li strong{color:var(--ink);font-weight:500}
+  ol{margin:14px 0 14px 2px;counter-reset:item;list-style:none}
+  ol>li{color:var(--ink-2);font-size:15.5px;padding:8px 0 8px 34px;position:relative;counter-increment:item;line-height:1.9}
+  ol>li::before{content:counter(item);position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:7px;background:var(--accent-soft);border:1px solid rgba(238,171,74,.3);color:var(--accent);font-size:11px;font-weight:500;display:grid;place-items:center;font-family:var(--serif)}
   ul{list-style:none;margin:14px 0}
-  ul li{color:var(--ink-dim);font-size:15px;padding:7px 0 7px 24px;position:relative}
-  ul li::before{content:"";position:absolute;left:4px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7}
-
-  .callout{background:linear-gradient(150deg,rgba(238,171,74,.10),rgba(238,171,74,.02));
-    border:1px solid rgba(238,171,74,.25);border-radius:16px;padding:24px 26px;margin:24px 0}
-  .callout .ct{font-weight:700;color:var(--accent-2);font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:9px}
-  .callout p{margin:6px 0 0;color:var(--ink-dim);font-size:15px}
-
-  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(238,171,74,.4);transition:border-color .2s}
+  ul li{color:var(--ink-2);font-size:15.5px;padding:8px 0 8px 26px;position:relative;line-height:1.9}
+  ul li::before{content:"";position:absolute;left:5px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .callout{background:linear-gradient(150deg,rgba(238,171,74,.1),rgba(238,171,74,.02));border:1px solid rgba(238,171,74,.2);border-radius:18px;padding:26px 28px;margin:24px 0}
+  .callout .ct{font-weight:500;color:var(--accent-2);font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+  .callout p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px}
+  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(238,171,74,.35);transition:border-color .2s}
   a.inline:hover{border-color:var(--accent)}
-
-  footer{border-top:1px solid var(--line);padding:42px 0 60px;background:var(--bg-2)}
+  footer{border-top:1px solid var(--line);padding:48px 0 64px;background:var(--bg-2)}
   .foot-grid{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .foot-brand{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.12em}
+  .foot-brand{font-family:var(--serif);font-size:20px;font-weight:500;text-decoration:none;color:var(--ink)}
   .foot-brand .dot{color:var(--accent)}
-  .foot-links{display:flex;gap:24px;flex-wrap:wrap}
-  .foot-links a{color:var(--ink-dim);text-decoration:none;font-size:13px;transition:color .2s}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap}
+  .foot-links a{color:var(--ink-2);text-decoration:none;font-size:13.5px;transition:color .2s}
   .foot-links a:hover{color:var(--accent)}
-  .copy{margin-top:26px;font-size:12px;color:var(--ink-faint)}
-
-  @media(max-width:600px){.head{padding:56px 0 38px}section{padding:34px 0}h2{flex-direction:column;gap:4px}}
+  .copy{margin-top:26px;font-size:12.5px;color:var(--ink-soft)}
+  @media(max-width:600px){.head{padding:66px 0 42px}section{padding:38px 0}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="brand">Roster<span class="dot">.</span></a>
   <a href="/" class="back">← トップへ戻る</a>
 </nav>
-
 <header class="head">
   <div class="wrap">
     <span class="eyebrow">Terms of Service</span>
@@ -93,30 +71,25 @@
     <p class="updated">最終更新日：2026年5月23日 / 施行日：2026年5月23日</p>
   </div>
 </header>
-
 <div class="lede">
   <div class="wrap">
     <p>本利用規約（以下「本規約」）は、Roster（以下「本アプリ」）の利用条件を定めるものです。<span class="hl">本アプリをダウンロード・利用された時点で、本規約に同意いただいたものとみなします。</span>ご利用の前に必ずお読みください。</p>
   </div>
 </div>
-
 <main>
 <div class="wrap">
-
   <section>
-    <h2><span class="no">01</span>適用<span class="ja-sub">Application</span></h2>
+    <h2><span class="no">1</span>適用<span class="ja-sub">Application</span></h2>
     <p>本規約は、本アプリの提供者である開発者（以下「開発者」）と、本アプリを利用するすべての方（以下「利用者」）との間の、本アプリの利用に関わる一切の関係に適用されます。</p>
     <p>本アプリは Apple の App Store を通じて配信されており、利用者は本規約に加えて Apple の定める利用条件（Apple Media Services 利用規約等）にも従うものとします。</p>
   </section>
-
   <section>
-    <h2><span class="no">02</span>利用資格・年齢制限<span class="ja-sub">Eligibility</span></h2>
+    <h2><span class="no">2</span>利用資格・年齢制限<span class="ja-sub">Eligibility</span></h2>
     <p>本アプリは成人向けの内容を含むため、<strong>17歳以上の方</strong>を対象としています。17歳未満の方は本アプリを利用できません。</p>
     <p>利用者は、本アプリを利用するにあたり、本規約に同意する法的な能力を有していることを表明するものとします。</p>
   </section>
-
   <section>
-    <h2><span class="no">03</span>本アプリの目的<span class="ja-sub">Purpose</span></h2>
+    <h2><span class="no">3</span>本アプリの目的<span class="ja-sub">Purpose</span></h2>
     <p>本アプリは、利用者自身が自らの記録を残し、振り返るための個人用ツールです。記録される内容は利用者が任意で入力するものであり、その内容・正確性について利用者自身が責任を負うものとします。</p>
     <p>本アプリが提供する各種の分析・予測・称号などの表示は、あくまで利用者が入力したデータに基づく参考情報であり、医学的・専門的な助言を構成するものではありません。</p>
     <div class="callout">
@@ -124,9 +97,8 @@
       <p>本アプリの表示する体調・コンディション・現役寿命予測などの情報は、診断・治療・予防を目的とした医学的助言ではありません。健康上の懸念がある場合は、必ず医師等の専門家にご相談ください。</p>
     </div>
   </section>
-
   <section>
-    <h2><span class="no">04</span>データの管理<span class="ja-sub">Your data</span></h2>
+    <h2><span class="no">4</span>データの管理<span class="ja-sub">Your data</span></h2>
     <p>本アプリで記録されたデータは、利用者の端末内に保存されます。データの取り扱いの詳細については、<a class="inline" href="/privacy">プライバシーポリシー</a>をご確認ください。</p>
     <ul>
       <li>利用者は、自らの記録データを管理する責任を負います。</li>
@@ -134,9 +106,8 @@
       <li>重要なデータについては、利用者自身でバックアップを行うことを推奨します。</li>
     </ul>
   </section>
-
   <section>
-    <h2><span class="no">05</span>App内課金<span class="ja-sub">In-app purchases</span></h2>
+    <h2><span class="no">5</span>App内課金<span class="ja-sub">In-app purchases</span></h2>
     <p>本アプリは、追加機能を利用できる有料プラン（App内課金。買い切りまたはサブスクリプション）を提供する場合があります。料金、課金内容、サブスクリプションの更新条件は、購入時に App Store 上で表示されます。</p>
     <ol>
       <li>課金・決済は Apple を通じて行われ、Apple の定める条件が適用されます。</li>
@@ -144,9 +115,8 @@
       <li>支払い済みの料金は、Apple の定める場合を除き、原則として返金されません。返金に関する手続きは Apple を通じて行われます。</li>
     </ol>
   </section>
-
   <section>
-    <h2><span class="no">06</span>禁止事項<span class="ja-sub">Prohibited conduct</span></h2>
+    <h2><span class="no">6</span>禁止事項<span class="ja-sub">Prohibited conduct</span></h2>
     <p>利用者は、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
     <ul>
       <li>法令または公序良俗に違反する行為</li>
@@ -156,33 +126,27 @@
       <li>その他、開発者が不適切と合理的に判断する行為</li>
     </ul>
   </section>
-
   <section>
-    <h2><span class="no">07</span>知的財産権<span class="ja-sub">Intellectual property</span></h2>
+    <h2><span class="no">7</span>知的財産権<span class="ja-sub">Intellectual property</span></h2>
     <p>本アプリおよびそのデザイン、ロゴ、コンテンツに関する著作権その他の知的財産権は、開発者または正当な権利者に帰属します。利用者が本アプリ内で入力したデータの内容は、利用者に帰属します。</p>
   </section>
-
   <section>
-    <h2><span class="no">08</span>免責事項<span class="ja-sub">Disclaimer</span></h2>
+    <h2><span class="no">8</span>免責事項<span class="ja-sub">Disclaimer</span></h2>
     <p>本アプリは「現状有姿」で提供されます。開発者は、本アプリが利用者の特定の目的に適合すること、エラーや不具合がないこと、中断なく利用できることを保証しません。</p>
     <p>本アプリの利用または利用不能によって利用者に生じた損害（データの消失を含む）について、開発者は、法令で許容される範囲において、責任を負わないものとします。</p>
   </section>
-
   <section>
-    <h2><span class="no">09</span>サービスの変更・終了<span class="ja-sub">Changes &amp; termination</span></h2>
+    <h2><span class="no">9</span>サービスの変更・終了<span class="ja-sub">Changes &amp; termination</span></h2>
     <p>開発者は、利用者への事前の通知なく、本アプリの内容を変更し、または提供を中断・終了することができます。これにより利用者に生じた損害について、開発者は責任を負いません。</p>
   </section>
-
   <section>
     <h2><span class="no">10</span>本規約の変更<span class="ja-sub">Amendments</span></h2>
     <p>開発者は、必要に応じて本規約を変更することができます。変更後の本規約は、本ページに掲載した時点から効力を生じます。変更後も本アプリを継続してご利用いただいた場合、変更後の規約に同意いただいたものとみなします。</p>
   </section>
-
   <section>
     <h2><span class="no">11</span>準拠法・管轄<span class="ja-sub">Governing law</span></h2>
     <p>本規約の解釈および適用は、日本法に準拠します。本アプリに関して開発者と利用者の間に紛争が生じた場合には、開発者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
   </section>
-
   <section>
     <h2><span class="no">12</span>お問い合わせ<span class="ja-sub">Contact</span></h2>
     <p>本規約に関するご質問は、以下までお問い合わせください。</p>
@@ -191,14 +155,12 @@
       <p><a class="inline" href="mailto:hello@roster.ink">hello@roster.ink</a></p>
     </div>
   </section>
-
 </div>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <a href="/" class="foot-brand" style="text-decoration:none">Roster<span class="dot">.</span></a>
+      <a href="/" class="foot-brand">Roster<span class="dot">.</span></a>
       <nav class="foot-links">
         <a href="/">トップ</a>
         <a href="/privacy">プライバシーポリシー</a>
@@ -209,6 +171,5 @@
     <p class="copy">© 2026 Roster. All rights reserved.</p>
   </div>
 </footer>
-
 </body>
 </html>
