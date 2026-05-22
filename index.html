@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roster — 人生の名簿</title>
+<meta name="description" content="セックスという場を作れたこと自体が現役の証。射精は結果、行動を承認する。あなた自身が現役を定義する記録アプリ、Roster。">
+<meta property="og:title" content="Roster — 人生の名簿">
+<meta property="og:description" content="現役を、あなた自身が定義する。パートナーを選手のように記録する iOS アプリ。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0e0c0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0c0a;
+    --bg-2:#161210;
+    --panel:#1d1815;
+    --line:#2c2520;
+    --ink:#f4ede3;
+    --ink-dim:#a99e90;
+    --ink-faint:#6f655a;
+    --accent:#eeab4a;
+    --accent-2:#f0c479;
+    --accent-deep:#c4842b;
+    --serif:'Bodoni Moda',serif;
+    --sans:'Zen Kaku Gothic New',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* grain overlay */
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    z-index:9999;
+    opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  section{position:relative}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;
+    backdrop-filter:blur(12px);
+    background:linear-gradient(180deg,rgba(14,12,10,.85),rgba(14,12,10,0));
+    transition:background .3s;
+  }
+  .brand{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:22px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .brand .dot{color:var(--accent)}
+  .nav-cta{
+    font-size:13px;font-weight:700;letter-spacing:.04em;
+    color:var(--bg);background:var(--accent);
+    padding:9px 18px;border-radius:999px;
+    text-decoration:none;transition:transform .2s,background .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);background:var(--accent-2)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:140px 0 90px;
+    background:
+      radial-gradient(120% 90% at 78% 8%,rgba(238,171,74,.16),transparent 55%),
+      radial-gradient(90% 70% at 10% 95%,rgba(196,132,43,.10),transparent 60%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:26px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(40px,6.2vw,76px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    margin-bottom:8px;
+  }
+  h1 .ja{
+    display:block;font-family:var(--sans);font-weight:900;
+    font-size:clamp(26px,3.4vw,42px);
+    letter-spacing:.02em;margin-top:14px;color:var(--ink);
+  }
+  .hero-lead{
+    font-size:17px;color:var(--ink-dim);max-width:30em;
+    margin:30px 0 38px;line-height:1.9;
+  }
+  .hero-lead b{color:var(--accent-2);font-weight:700}
+  .hero-cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .store-badge{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--ink);color:var(--bg);
+    padding:13px 24px 13px 20px;border-radius:14px;
+    text-decoration:none;transition:transform .2s,box-shadow .2s;
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
+  }
+  .store-badge:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(238,171,74,.18)}
+  .store-badge svg{width:26px;height:26px}
+  .store-badge .s{font-size:10px;letter-spacing:.06em;display:block;opacity:.7}
+  .store-badge .l{font-size:18px;font-weight:700;line-height:1.1}
+  .hero-note{font-size:12px;color:var(--ink-faint);letter-spacing:.03em}
+
+  /* phone mock */
+  .phone{
+    position:relative;justify-self:center;
+    width:270px;height:560px;border-radius:42px;
+    background:linear-gradient(160deg,#241d18,#120e0b);
+    border:1px solid var(--line);
+    box-shadow:0 40px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);
+    padding:14px;
+  }
+  .phone-screen{
+    width:100%;height:100%;border-radius:30px;overflow:hidden;
+    background:radial-gradient(120% 80% at 50% 0%,#211a14,#0d0a08);
+    display:flex;flex-direction:column;padding:30px 22px;
+  }
+  .ps-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .ps-title{font-family:var(--serif);font-size:24px;font-weight:600;margin:6px 0 22px}
+  .ps-card{
+    background:linear-gradient(150deg,rgba(238,171,74,.14),rgba(238,171,74,.03));
+    border:1px solid rgba(238,171,74,.22);
+    border-radius:16px;padding:16px 16px 14px;margin-bottom:12px;
+  }
+  .ps-card .k{font-size:11px;color:var(--ink-dim);letter-spacing:.05em}
+  .ps-card .v{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--accent-2);line-height:1.1;margin-top:2px}
+  .ps-card .v small{font-size:13px;color:var(--ink-dim);font-family:var(--sans)}
+  .ps-badges{display:flex;gap:8px;margin-top:4px}
+  .ps-badge{
+    flex:1;text-align:center;background:rgba(255,255,255,.03);
+    border:1px solid var(--line);border-radius:13px;padding:12px 4px;
+  }
+  .ps-badge .ic{font-size:22px}
+  .ps-badge .nm{font-size:9px;color:var(--ink-dim);margin-top:5px;letter-spacing:.04em}
+  .ps-badge.lit{border-color:rgba(238,171,74,.4);background:rgba(238,171,74,.08)}
+  .ps-badge.lit .nm{color:var(--accent-2)}
+
+  /* ---------- philosophy strip ---------- */
+  .philo{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--bg-2);padding:64px 0;
+  }
+  .philo-quote{
+    font-family:var(--serif);font-style:italic;
+    font-size:clamp(22px,3vw,34px);line-height:1.5;
+    max-width:20em;color:var(--ink);
+  }
+  .philo-quote .hl{color:var(--accent);font-style:normal}
+  .philo-sub{margin-top:22px;color:var(--ink-dim);font-size:15px;max-width:34em}
+
+  /* ---------- section heads ---------- */
+  .sec{padding:100px 0}
+  .sec-eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:16px;
+  }
+  .sec-title{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(30px,4vw,46px);line-height:1.1;margin-bottom:18px;
+  }
+  .sec-title .ja{font-family:var(--sans);font-weight:900;font-size:.6em;display:block;margin-top:10px;letter-spacing:.02em}
+  .sec-lead{color:var(--ink-dim);max-width:40em;font-size:16px}
+
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
+  .pillar{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:20px;padding:34px 28px;position:relative;overflow:hidden;
+    transition:transform .3s,border-color .3s;
+  }
+  .pillar:hover{transform:translateY(-4px);border-color:rgba(238,171,74,.35)}
+  .pillar-num{
+    font-family:var(--serif);font-size:54px;font-weight:600;
+    color:rgba(238,171,74,.22);line-height:1;position:absolute;top:18px;right:22px;
+  }
+  .pillar h3{font-size:20px;font-weight:700;margin:10px 0 12px;letter-spacing:.01em}
+  .pillar p{color:var(--ink-dim);font-size:14.5px;line-height:1.8}
+
+  /* ---------- titles / 称号 ---------- */
+  .titles{background:var(--bg-2);border-top:1px solid var(--line)}
+  .title-systems{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px}
+  .ts-card{
+    border:1px solid var(--line);border-radius:20px;padding:32px 26px;
+    background:linear-gradient(180deg,var(--panel),rgba(29,24,21,.4));
+  }
+  .ts-icon{font-size:32px;margin-bottom:14px;display:block}
+  .ts-card h4{font-size:17px;font-weight:700;margin-bottom:4px}
+  .ts-card .ts-theme{font-size:12px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+  .ladder{list-style:none;display:flex;flex-direction:column;gap:0}
+  .ladder li{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:9px 0;border-top:1px dashed var(--line);
+    font-size:14px;color:var(--ink-dim);
+  }
+  .ladder li:first-child{border-top:none}
+  .ladder li .rank{color:var(--ink);font-weight:500}
+  .ladder li.top .rank{color:var(--accent-2);font-weight:700}
+  .ladder li .cond{font-size:11.5px;color:var(--ink-faint);letter-spacing:.02em}
+  .ladder-more{font-size:12px;color:var(--ink-faint);text-align:center;padding-top:12px;font-style:italic}
+
+  /* ---------- personas ---------- */
+  .persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+  .persona{
+    border:1px solid var(--line);border-radius:18px;padding:30px 26px;
+    position:relative;transition:background .3s;
+  }
+  .persona:hover{background:var(--panel)}
+  .persona .tag{
+    font-family:var(--serif);font-size:13px;letter-spacing:.2em;
+    color:var(--accent);font-weight:600;text-transform:uppercase;
+  }
+  .persona h4{font-size:19px;font-weight:700;margin:10px 0 12px}
+  .persona p{color:var(--ink-dim);font-size:14px;line-height:1.8}
+
+  /* ---------- privacy ---------- */
+  .privacy{
+    background:linear-gradient(150deg,rgba(238,171,74,.07),transparent 60%);
+    border-top:1px solid var(--line);
+  }
+  .priv-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .priv-points{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:18px}
+  .priv-points li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ink-dim)}
+  .priv-points .pi{
+    flex-shrink:0;width:26px;height:26px;border-radius:8px;
+    background:rgba(238,171,74,.14);border:1px solid rgba(238,171,74,.3);
+    display:grid;place-items:center;color:var(--accent);font-size:14px;
+  }
+  .priv-points b{color:var(--ink);font-weight:700}
+
+  /* ---------- final cta ---------- */
+  .final{text-align:center;padding:120px 0}
+  .final h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,58px);line-height:1.08;margin-bottom:20px}
+  .final p{color:var(--ink-dim);font-size:17px;max-width:30em;margin:0 auto 38px}
+  .final .hero-cta-row{justify-content:center}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:46px 0 60px;background:var(--bg-2)}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+  .foot-brand{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.12em}
+  .foot-brand .dot{color:var(--accent)}
+  .foot-tag{color:var(--ink-faint);font-size:13px;margin-top:8px;max-width:24em}
+  .foot-links{display:flex;gap:28px;flex-wrap:wrap}
+  .foot-links a{color:var(--ink-dim);text-decoration:none;font-size:13px;letter-spacing:.03em;transition:color .2s}
+  .foot-links a:hover{color:var(--accent)}
+  .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .foot-bottom span{font-size:12px;color:var(--ink-faint)}
+  .age-badge{
+    border:1px solid var(--line);border-radius:8px;padding:4px 10px;
+    font-size:11px;color:var(--ink-dim);letter-spacing:.05em;
+  }
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:50px}
+    .phone{order:-1;width:230px;height:478px}
+    .pillars,.title-systems,.persona-grid,.priv-grid{grid-template-columns:1fr}
+    .priv-grid{gap:30px}
+    .sec{padding:74px 0}
+    .hero{padding:118px 0 70px}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <span class="brand">Roster<span class="dot">.</span></span>
+  <a href="#download" class="nav-cta">App Store で入手</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">人生の名簿 — Life Roster</span>
+      <h1 class="reveal">
+        Define your<br>own prime.
+        <span class="ja">現役は、あなた自身が定義する。</span>
+      </h1>
+      <p class="hero-lead reveal">
+        セックスという場を作れたこと自体が、現役の証。
+        <b>射精は結果、行動を承認する。</b>
+        パートナーを「現役選手」のように記録し、あなたの軌跡を名簿に刻む iOS アプリ。
+      </p>
+      <div class="hero-cta-row reveal">
+        <a href="#download" class="store-badge" id="dl-top">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
+          <span><span class="s">Download on the</span><span class="l">App Store</span></span>
+        </a>
+        <span class="hero-note">iOS 26.4 以降 / 17+</span>
+      </div>
+    </div>
+
+    <!-- phone mock: 振り返り画面 (審査配慮で記録画面は出さない) -->
+    <div class="phone reveal">
+      <div class="phone-screen">
+        <span class="ps-label">Roster Stats</span>
+        <span class="ps-title">人生の名簿</span>
+        <div class="ps-card">
+          <div class="k">現役寿命の予測</div>
+          <div class="v">あと 23<small> 年</small></div>
+        </div>
+        <div class="ps-card" style="margin-bottom:16px">
+          <div class="k">今月の称号</div>
+          <div class="v" style="font-size:24px">達人 <small>· 月16回</small></div>
+        </div>
+        <div class="ps-badges">
+          <div class="ps-badge lit"><div class="ic">🐉</div><div class="nm">龍</div></div>
+          <div class="ps-badge lit"><div class="ic">🏆</div><div class="nm">殿堂入り</div></div>
+          <div class="ps-badge"><div class="ic">✦</div><div class="nm">仙人</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PHILOSOPHY -->
+<section class="philo">
+  <div class="wrap reveal">
+    <p class="philo-quote">
+      記録するのは回数じゃない。<br>
+      <span class="hl">あなたが現役であり続けた</span>、その事実だ。
+    </p>
+    <p class="philo-sub">
+      Roster ＝「選手登録名簿」。スポーツ選手のスタッツのように、あなたの関係を可視化する。アクティブか、非アクティブか。親密化したか、疎遠になったか。すべては、あなたが書き記す一冊の名簿になる。
+    </p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Concept</div>
+      <h2 class="sec-title">名簿という、3つの視点。</h2>
+      <p class="sec-lead">記録を続けるための「達成感」と、振り返るための「物語」。Roster は単なるログではなく、あなたの現役を支える設計になっている。</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">01</span>
+        <h3>現役寿命を、見える化</h3>
+        <p>あなたのペースから「現役でいられる年数」を予測。続けるほどに伸びる数字が、明日のモチベーションになる。</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">02</span>
+        <h3>3年の軌跡を、物語に</h3>
+        <p>出会いの時期、関係の濃淡、季節のうねり。長期トレンドが、ただのデータを「あなたの人生」に変える。</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">03</span>
+        <h3>称号を、集める楽しさ</h3>
+        <p>図鑑のように埋まっていく称号。未取得のシルエットすら、次のゴールになる。集める喜びが記録を続けさせる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TITLE SYSTEMS -->
+<section class="sec titles">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Title Systems</div>
+      <h2 class="sec-title">3つの称号体系。<span class="ja">それぞれが、別の世界観を持つ。</span></h2>
+      <p class="sec-lead">月の達成・パートナーとの累計・現役の継続。3つの軸で、あなたの現役が階級になる。</p>
+    </div>
+    <div class="title-systems">
+      <div class="ts-card reveal">
+        <span class="ts-icon">✦</span>
+        <h4>月バッジ</h4>
+        <div class="ts-theme">学者の道</div>
+        <ul class="ladder">
+          <li><span class="rank">修士</span><span class="cond">月8回</span></li>
+          <li><span class="rank">達人</span><span class="cond">月16回</span></li>
+          <li><span class="rank">聖者</span><span class="cond">月24回</span></li>
+          <li class="top"><span class="rank">創造主</span><span class="cond">最高位</span></li>
+        </ul>
+        <p class="ladder-more">修士から創造主まで、全10段階</p>
+      </div>
+      <div class="ts-card reveal">
+        <span class="ts-icon">🏆</span>
+        <h4>パートナー称号</h4>
+        <div class="ts-theme">球団・名鑑</div>
+        <ul class="ladder">
+          <li><span class="rank">テスト生</span><span class="cond">累計1〜2</span></li>
+          <li><span class="rank">レギュラー</span><span class="cond">累計20〜29</span></li>
+          <li><span class="rank">永久欠番</span><span class="cond">累計120〜</span></li>
+          <li class="top"><span class="rank">殿堂入り</span><span class="cond">累計180+</span></li>
+        </ul>
+        <p class="ladder-more">テスト生から殿堂入りまで、全10階級</p>
+      </div>
+      <div class="ts-card reveal">
+        <span class="ts-icon">🐉</span>
+        <h4>現役寿命称号</h4>
+        <div class="ts-theme">動物・長寿</div>
+        <ul class="ladder">
+          <li><span class="rank">金魚</span><span class="cond">継続の始まり</span></li>
+          <li><span class="rank">鶴</span><span class="cond">継続中</span></li>
+          <li><span class="rank">亀</span><span class="cond">長寿</span></li>
+          <li class="top"><span class="rank">龍</span><span class="cond">最高位 🐉</span></li>
+        </ul>
+        <p class="ladder-more">金魚から龍まで、全5段階</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">For You</div>
+      <h2 class="sec-title">どんな現役にも、名簿を。</h2>
+    </div>
+    <div class="persona-grid">
+      <div class="persona reveal">
+        <span class="tag">Keep</span>
+        <h4>いつものペースを保ちたい</h4>
+        <p>固定のパートナーと、安定した関係を続けるあなたへ。「いつものペース」を可視化し、現役を守る。</p>
+      </div>
+      <div class="persona reveal">
+        <span class="tag">Return</span>
+        <h4>現役に戻りたい</h4>
+        <p>体調やコンディションを記録し、回復の経過を追う。数字でなく、満足度で前進を実感できる。</p>
+      </div>
+      <div class="persona reveal">
+        <span class="tag">Active</span>
+        <h4>もっとアクティブに</h4>
+        <p>複数の関係を、選手名鑑のように一望。新規開拓も、累計の軌跡も、すべてあなたのスタッツに。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="sec privacy">
+  <div class="wrap priv-grid">
+    <div class="reveal">
+      <div class="sec-eyebrow">Privacy First</div>
+      <h2 class="sec-title">あなたの名簿は、<span class="ja">あなただけのもの。</span></h2>
+      <p class="sec-lead">最もプライベートな記録だからこそ、設計の中心にプライバシーを置いた。</p>
+    </div>
+    <ul class="priv-points reveal">
+      <li><span class="pi">●</span><span><b>端末内で完結。</b>記録はあなたの iPhone の中だけで処理される。</span></li>
+      <li><span class="pi">●</span><span><b>アプリロック対応。</b>起動のたびに、あなた以外の目から名簿を守る。</span></li>
+      <li><span class="pi">●</span><span><b>あなたが定義する。</b>「現役」の基準も、記録する内容も、すべてあなた次第。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="download">
+  <div class="wrap reveal">
+    <h2>あなたの現役を、<br>名簿に刻もう。</h2>
+    <p>今日から、Roster で。記録は、現役であり続けた証になる。</p>
+    <div class="hero-cta-row">
+      <a href="#" class="store-badge" id="dl-bottom">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
+        <span><span class="s">Download on the</span><span class="l">App Store</span></span>
+      </a>
+      <span class="hero-note">iOS 26.4 以降 / 17+ / 無料（App内課金あり）</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Roster<span class="dot">.</span></div>
+        <p class="foot-tag">人生の名簿。現役は、あなた自身が定義する。</p>
+      </div>
+      <nav class="foot-links">
+        <a href="/privacy">プライバシーポリシー</a>
+        <a href="/terms">利用規約</a>
+        <a href="/support">サポート</a>
+        <a href="mailto:hello@roster.ink">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Roster. All rights reserved.</span>
+      <span class="age-badge">17+ — 成人向けコンテンツを含みます</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav background on scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>{nav.style.background=scrollY>40?'rgba(14,12,10,.92)':'linear-gradient(180deg,rgba(14,12,10,.85),rgba(14,12,10,0))';});
+
+  // staggered reveal
+  const io=new IntersectionObserver((es)=>{
+    es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);io.unobserve(e.target);}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
