@@ -64,7 +64,7 @@
   .nav-cta:hover{transform:translateY(-1px);background:var(--accent-2)}
 
   /* hero */
-  .hero{text-align:center;padding:180px 0 120px;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
+  .hero{text-align:center;padding:180px 0 0;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
   .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
   h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
@@ -78,13 +78,13 @@
   .store-badge .l{font-size:18px;font-weight:500;line-height:1.1}
   .hero-note{font-size:13px;color:var(--ink-faint);letter-spacing:.02em}
 
-  /* hero stage : 実機スクショ 2 台 */
-  .hero-stage{margin-top:84px;display:flex;justify-content:center;align-items:flex-end;gap:36px}
-  .device{position:relative;width:218px;border-radius:36px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 44px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:9px}
-  .device img{width:100%;display:block;border-radius:28px}
-  .device.back{transform:translateY(22px) scale(.93) rotate(-2deg);opacity:.94;z-index:1}
-  .device.front{z-index:2}
-  .device .cap{position:absolute;left:0;right:0;bottom:-32px;text-align:center;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+  /* hero stage : 実機スクショ 2 台（上部を見せ下端フェード） */
+  .hero-stage{margin-top:72px;display:flex;justify-content:center;align-items:flex-start;gap:36px}
+  .device{position:relative;width:240px;border-radius:38px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 44px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:10px;flex-shrink:0}
+  .device .scr{height:380px;overflow:hidden;border-radius:30px;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent)}
+  .device img{width:100%;height:auto;display:block;border-radius:30px 30px 0 0}
+  .device.back{transform:translateY(34px) scale(.93) rotate(-2deg);opacity:.94;z-index:1}
+  .device.front{transform:translateY(8px);z-index:2}
 
   /* statement */
   .statement{padding:140px 0;text-align:center}
@@ -142,14 +142,22 @@
   .foot-bottom span{font-size:12.5px;color:var(--ink-faint);font-weight:300}
   .age-badge{border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em}
 
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.2,.7,.3,1),transform .85s cubic-bezier(.2,.7,.3,1)}
-  .reveal.in{opacity:1;transform:none}
+  /* 既定は必ず表示（JSが無くてもコンテンツは見える） */
+  .reveal{opacity:1;transform:none}
+  /* JS が動いたときだけアニメーションを有効化 */
+  .js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.2,.7,.3,1),transform .85s cubic-bezier(.2,.7,.3,1)}
+  .js-reveal .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .js-reveal .reveal{opacity:1;transform:none;transition:none}
+  }
 
   @media(max-width:680px){
     .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
     .an-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}
-    .hero-stage{gap:0;margin-top:64px}
-    .device{width:256px}
+    .hero-stage{gap:0;margin-top:56px}
+    .device{width:266px}
+    .device.front{transform:translateY(8px)}
+    .device .scr{height:360px}
     .device.back{display:none}
   }
 </style>
@@ -177,12 +185,10 @@
   </div>
   <div class="hero-stage reveal">
     <div class="device back">
-      <img src="/screen-calendar.png" alt="Roster のカレンダー画面。月ごとの記録と達成度・満足度を一覧できる。" width="752" height="1568">
-      <span class="cap">Calendar</span>
+      <div class="scr"><img src="/screen-calendar.png" alt="Roster のカレンダー画面。月ごとの記録と達成度・満足度を一覧できる。" width="752" height="1568"></div>
     </div>
     <div class="device front">
-      <img src="/screen-stats.png" alt="Roster Stats のランキング画面。累計回数・満足度などをパートナー別に分析。" width="759" height="1568">
-      <span class="cap">Roster Stats</span>
+      <div class="scr"><img src="/screen-stats.png" alt="Roster Stats のランキング画面。累計回数・満足度などをパートナー別に分析。" width="759" height="1568"></div>
     </div>
   </div>
 </header>
@@ -303,10 +309,41 @@
 </footer>
 
 <script>
-  const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>30)});
-  const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  (function(){
+    var nav=document.getElementById('nav');
+    if(nav){addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>30)});}
+
+    var els=document.querySelectorAll('.reveal');
+    // IntersectionObserver 非対応なら何もしない（CSS既定で全表示のまま）
+    if(!('IntersectionObserver' in window)){return;}
+
+    // ここまで来たらアニメーション有効化（要素を一旦透明に）
+    document.documentElement.classList.add('js-reveal');
+
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e,i){
+        if(e.isIntersecting){
+          setTimeout(function(){e.target.classList.add('in')}, i*70);
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -5% 0px'});
+
+    els.forEach(function(el){io.observe(el)});
+
+    // 保険1: ロード直後、すでに画面内にある要素は即出現
+    function showInView(){
+      els.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.top < innerHeight && r.bottom > 0){el.classList.add('in');}
+      });
+    }
+    showInView();
+    addEventListener('load', showInView);
+
+    // 保険2: 念のため、3秒後には全要素を強制表示（取りこぼし防止）
+    setTimeout(function(){els.forEach(function(el){el.classList.add('in')});}, 3000);
+  })();
 </script>
 </body>
 </html>
