@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roster — 出会ってきたパートナーの名簿</title>
-<meta name="description" content="いつまでも、現役で。出会ってきたパートナーを振り返り、あなたの現役寿命まで予測する iOS アプリ。記録はすべて端末内で完結します。">
-<meta property="og:title" content="Roster — 出会ってきたパートナーの名簿">
-<meta property="og:description" content="いつまでも、現役で。出会ってきたパートナーを振り返る、あなただけの名簿。">
+<title>Roster — あなたのパートナー名鑑</title>
+<meta name="description" content="ずっと、現役。あなたの出会いを忘れないために。パートナーを多角的に分析し、関係構築に役立てる iOS アプリ。記録はすべて端末内で完結します。">
+<meta property="og:title" content="Roster — あなたのパートナー名鑑">
+<meta property="og:description" content="ずっと、現役。あなたの出会いを、忘れないために。パートナーマネジメントの決定版。">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#100d0b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +34,9 @@
   /* hero */
   .hero{text-align:center;padding:180px 0 90px;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
   .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.4vw,88px);line-height:1.06;letter-spacing:.005em;color:var(--ink)}
-  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(20px,2.7vw,30px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
-  .hero-lead{font-size:clamp(16px,2vw,19px);color:var(--ink-2);max-width:27em;margin:36px auto 0;line-height:1.95;font-weight:300}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
+  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
+  .hero-lead{font-size:clamp(16px,2vw,19px);color:var(--ink-2);max-width:26em;margin:36px auto 0;line-height:1.95;font-weight:300}
   .hero-lead b{color:var(--accent-2);font-weight:500}
   .hero-cta-row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:46px}
   .store-badge{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);padding:15px 28px 15px 23px;border-radius:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 34px rgba(0,0,0,.4)}
@@ -48,41 +48,42 @@
 
   .hero-stage{margin-top:76px;display:flex;justify-content:center}
   .phone{position:relative;width:300px;height:618px;border-radius:48px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 50px 90px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:15px}
-  .phone-screen{width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#231b14,#120e0b);display:flex;flex-direction:column;padding:36px 26px}
+  .phone-screen{width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#231b14,#120e0b);display:flex;flex-direction:column;padding:34px 24px}
   .ps-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
-  .ps-title{font-family:var(--serif);font-size:28px;font-weight:400;margin:7px 0 26px;color:var(--ink)}
-  .ps-card{background:linear-gradient(150deg,rgba(238,171,74,.12),rgba(238,171,74,.02));border:1px solid rgba(238,171,74,.18);border-radius:18px;padding:19px 18px 17px;margin-bottom:14px}
+  .ps-title{font-family:var(--serif);font-size:26px;font-weight:400;margin:7px 0 22px;color:var(--ink)}
+  .ps-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .ps-row .pk{font-size:13px;color:var(--ink-2);font-weight:300}
+  .ps-row .pv{font-family:var(--serif);font-size:19px;color:var(--accent-2)}
+  .ps-card{background:linear-gradient(150deg,rgba(238,171,74,.12),rgba(238,171,74,.02));border:1px solid rgba(238,171,74,.18);border-radius:16px;padding:16px 16px 14px;margin:16px 0 14px}
   .ps-card .k{font-size:11px;color:var(--ink-soft);letter-spacing:.04em}
-  .ps-card .v{font-family:var(--serif);font-size:34px;font-weight:400;color:var(--accent-2);line-height:1.15;margin-top:3px}
-  .ps-card .v small{font-size:14px;color:var(--ink-soft);font-family:var(--sans);font-weight:400}
-  .ps-card.alt{background:rgba(255,255,255,.03);border-color:var(--line)}
-  .ps-card.alt .v{font-size:25px;color:var(--ink)}
-  .ps-badges{display:flex;gap:9px;margin-top:6px}
-  .ps-badge{flex:1;text-align:center;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:15px;padding:14px 4px}
-  .ps-badge .ic{font-size:24px}
-  .ps-badge .nm{font-size:9.5px;color:var(--ink-soft);margin-top:6px;letter-spacing:.03em}
-  .ps-badge.lit{border-color:rgba(238,171,74,.35);background:rgba(238,171,74,.08)}
-  .ps-badge.lit .nm{color:var(--accent-2)}
+  .ps-card .v{font-family:var(--serif);font-size:30px;font-weight:400;color:var(--accent-2);line-height:1.15;margin-top:3px}
+  .ps-card .v small{font-size:13px;color:var(--ink-soft);font-family:var(--sans);font-weight:400}
+  .ps-map{flex:1;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink-soft);position:relative;overflow:hidden}
+  .ps-map .pin{position:absolute;font-size:15px}
 
   /* statement */
   .statement{padding:140px 0;text-align:center}
-  .statement p{font-family:var(--serif);font-weight:400;font-size:clamp(27px,4.2vw,48px);line-height:1.45;letter-spacing:.005em;max-width:17em;margin:0 auto;color:var(--ink)}
+  .statement p{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,50px);line-height:1.4;letter-spacing:.005em;max-width:15em;margin:0 auto;color:var(--ink)}
   .statement .hl{color:var(--accent-2)}
-  .statement .sub{font-family:var(--sans);font-weight:300;font-size:16px;line-height:2;color:var(--ink-2);max-width:34em;margin:40px auto 0}
+  .statement .sub{font-family:var(--sans);font-weight:300;font-size:16px;line-height:2;color:var(--ink-2);max-width:32em;margin:38px auto 0}
 
-  /* features */
-  .features{padding:120px 0;background:var(--bg-2)}
-  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .feat{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:44px 36px;transition:transform .35s,border-color .35s}
-  .feat:hover{transform:translateY(-6px);border-color:rgba(238,171,74,.35)}
-  .feat-ic{width:62px;height:62px;border-radius:18px;background:var(--accent-soft);display:grid;place-items:center;font-size:30px;margin-bottom:26px}
-  .feat h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:14px;line-height:1.3}
-  .feat p{color:var(--ink-2);font-size:15px;line-height:1.95;font-weight:300}
-  .feat p b{color:var(--accent-2);font-weight:500}
+  /* analyze (主役：多角的分析) */
+  .analyze{padding:120px 0;background:var(--bg-2)}
+  .sec-head{text-align:center;margin-bottom:64px}
+  .sec-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:20px}
+  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.4vw,46px);line-height:1.25;letter-spacing:.005em}
+  .sec-lead{color:var(--ink-2);max-width:32em;margin:22px auto 0;font-size:16px;line-height:1.95;font-weight:300}
+  .an-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .an{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px 30px;transition:transform .35s,border-color .35s}
+  .an:hover{transform:translateY(-5px);border-color:rgba(238,171,74,.3)}
+  .an-ic{width:54px;height:54px;border-radius:15px;background:var(--accent-soft);display:grid;place-items:center;font-size:25px;margin-bottom:20px}
+  .an h3{font-size:18px;font-weight:500;margin-bottom:8px}
+  .an p{color:var(--ink-2);font-size:14px;line-height:1.85;font-weight:300}
+  .an .demo{font-family:var(--serif);font-size:24px;color:var(--accent-2);margin-bottom:6px;line-height:1.1}
+  .an .demo small{font-size:13px;color:var(--ink-soft);font-family:var(--sans)}
 
-  /* for-you (こんな人におすすめ) */
+  /* for-you */
   .foryou{padding:130px 0;text-align:center}
-  .foryou-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:22px}
   .foryou h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,46px);line-height:1.25;letter-spacing:.005em;margin-bottom:56px}
   .foryou-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .fy{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px 26px;text-align:left;transition:transform .35s,border-color .35s}
@@ -91,23 +92,17 @@
   .fy h4{font-size:16px;font-weight:500;margin-bottom:10px;color:var(--ink);line-height:1.5}
   .fy p{color:var(--ink-2);font-size:14px;line-height:1.85;font-weight:300}
 
-  /* collect */
-  .collect{padding:130px 0;text-align:center;background:var(--bg-2)}
-  .collect-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:22px}
-  .collect h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,46px);line-height:1.25;letter-spacing:.005em;margin-bottom:22px}
-  .collect p{color:var(--ink-2);max-width:30em;margin:0 auto 56px;font-size:16px;line-height:1.95;font-weight:300}
-  .collect-badges{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-  .cb{width:120px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px 14px;transition:transform .35s,border-color .35s}
-  .cb:hover{transform:translateY(-6px);border-color:rgba(238,171,74,.35)}
-  .cb .ic{font-size:34px}
-  .cb .nm{font-size:14px;color:var(--ink);margin-top:14px;font-weight:500}
-  .cb .sub{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
-  .cb.dim{opacity:.5}
-  .cb.dim .ic{filter:grayscale(.6)}
+  /* privacy */
+  .privacy{padding:130px 0;text-align:center;background:var(--bg-2)}
+  .privacy .pi{font-size:44px;margin-bottom:24px}
+  .privacy h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,48px);line-height:1.3;letter-spacing:.005em;margin-bottom:20px}
+  .privacy .lead{color:var(--ink);max-width:24em;margin:0 auto 14px;font-size:19px;line-height:1.7;font-weight:400}
+  .privacy p{color:var(--ink-2);max-width:30em;margin:0 auto;font-size:15.5px;line-height:1.95;font-weight:300}
+  .privacy p b{color:var(--accent-2);font-weight:500}
 
   /* final */
   .final{text-align:center;padding:150px 0;background:radial-gradient(65% 55% at 50% 0%,rgba(238,171,74,.12),transparent 68%),var(--bg)}
-  .final h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5.4vw,60px);line-height:1.18;letter-spacing:.005em;margin-bottom:24px}
+  .final h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,76px);line-height:1.1;letter-spacing:.005em;margin-bottom:24px}
   .final p{color:var(--ink-2);font-size:17px;max-width:26em;margin:0 auto 42px;line-height:1.9;font-weight:300}
 
   footer{border-top:1px solid var(--line);padding:54px 0 64px;background:var(--bg-2)}
@@ -126,8 +121,8 @@
   .reveal.in{opacity:1;transform:none}
 
   @media(max-width:680px){
-    .statement{padding:96px 0}.features{padding:88px 0}.foryou{padding:90px 0}.collect{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
-    .feat-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}.cb{width:100px}
+    .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
+    .an-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -141,9 +136,9 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow reveal">出会ってきたパートナーの名簿</span>
-    <h1 class="reveal">いつまでも、<br>現役で。<span class="ja">あなたが出会ってきた、すべての記録を。</span></h1>
-    <p class="hero-lead reveal">出会ってきたパートナーを振り返る、<b>あなただけの名簿。</b>記録はすべて、あなたの iPhone の中だけに。</p>
+    <span class="eyebrow reveal">あなたのパートナー名鑑</span>
+    <h1 class="reveal">ずっと、<br>現役。<span class="ja">あなたの出会いを、忘れないために。</span></h1>
+    <p class="hero-lead reveal">出会ってきたパートナーを記録し、多角的に分析する。<br><b>パートナーマネジメントの決定版。</b></p>
     <div class="hero-cta-row reveal">
       <a href="#download" class="store-badge">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
@@ -155,14 +150,18 @@
   <div class="hero-stage reveal">
     <div class="phone">
       <div class="phone-screen">
-        <span class="ps-label">Roster Stats</span>
-        <span class="ps-title">パートナー名簿</span>
+        <span class="ps-label">Partner Profile</span>
+        <span class="ps-title">パートナー分析</span>
+        <div class="ps-row"><span class="pk">累計回数</span><span class="pv">38</span></div>
+        <div class="ps-row"><span class="pk">累積投資額</span><span class="pv">¥124,000</span></div>
+        <div class="ps-row"><span class="pk">出会い経路</span><span class="pv">マッチング</span></div>
+        <div class="ps-row"><span class="pk">出身地</span><span class="pv">大阪</span></div>
         <div class="ps-card"><div class="k">現役寿命の予測</div><div class="v">あと 23<small> 年</small></div></div>
-        <div class="ps-card alt"><div class="k">今月の称号</div><div class="v">達人 <small>· 月16回</small></div></div>
-        <div class="ps-badges">
-          <div class="ps-badge lit"><div class="ic">🐉</div><div class="nm">龍</div></div>
-          <div class="ps-badge lit"><div class="ic">🏆</div><div class="nm">殿堂入り</div></div>
-          <div class="ps-badge"><div class="ic">✦</div><div class="nm">仙人</div></div>
+        <div class="ps-map">
+          <span class="pin" style="top:30%;left:55%">📍</span>
+          <span class="pin" style="top:55%;left:35%">📍</span>
+          <span class="pin" style="top:42%;left:68%">📍</span>
+          出身地マップ
         </div>
       </div>
     </div>
@@ -172,24 +171,43 @@
 <!-- STATEMENT -->
 <section class="statement">
   <div class="wrap reveal">
-    <p>あなたが出会ってきた人を、<span class="hl">名簿のように振り返る。</span></p>
-    <p class="sub">パートナーを「現役選手」のように記録する。アクティブか、非アクティブか。出会いから今までを、一冊の名簿で。</p>
+    <p>その出会いを、<span class="hl">忘れないために。</span></p>
+    <p class="sub">記憶はいつか薄れる。でも記録は、残る。あなたが出会ってきたすべてを、一冊の名鑑に。</p>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
+<!-- ANALYZE (主役) -->
+<section class="analyze">
   <div class="wrap">
-    <div class="feat-grid">
-      <div class="feat reveal">
-        <div class="feat-ic">🔒</div>
-        <h3>誰にも見られない。</h3>
-        <p>記録はすべて<b>あなたの iPhone の中だけ</b>で処理され、外部に送信されません。アプリロックにも対応。最もプライベートな記録だから、プライバシーを設計の中心に。</p>
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Analyze</div>
+      <h2 class="sec-title">パートナーを、<br>あらゆる角度で。</h2>
+      <p class="sec-lead">ただ記録するだけじゃない。多角的に分析して、これからの関係構築に役立てよう。</p>
+    </div>
+    <div class="an-grid">
+      <div class="an reveal">
+        <div class="an-ic">📊</div>
+        <div class="demo">累計 38<small> 回</small></div>
+        <h3>累計回数</h3>
+        <p>パートナーごとの積み重ねを、ひと目で。関係の濃淡が、数字で見えてくる。</p>
       </div>
-      <div class="feat reveal">
-        <div class="feat-ic">📈</div>
-        <h3>現役寿命を、予測。</h3>
-        <p>あなたのペースから、<b>「いつまで現役でいられるか」</b>を予測。続けるほど伸びる数字が、明日のモチベーションになる。</p>
+      <div class="an reveal">
+        <div class="an-ic">💴</div>
+        <div class="demo">¥124,000</div>
+        <h3>累積投資額</h3>
+        <p>食事やプレゼント、これまでの投資を記録。関係にかけてきたものが分かる。</p>
+      </div>
+      <div class="an reveal">
+        <div class="an-ic">🗺️</div>
+        <div class="demo">12<small> エリア</small></div>
+        <h3>出身地マップ</h3>
+        <p>出会ってきた人を地図にプロット。あなたの行動範囲が、地図に浮かぶ。</p>
+      </div>
+      <div class="an reveal">
+        <div class="an-ic">🧭</div>
+        <div class="demo">マッチング</div>
+        <h3>出会い経路</h3>
+        <p>どこで出会ったかを分類。あなたにとって相性のいい出会い方が見えてくる。</p>
       </div>
     </div>
   </div>
@@ -198,52 +216,42 @@
 <!-- FOR YOU -->
 <section class="foryou">
   <div class="wrap">
-    <div class="reveal">
-      <div class="foryou-eyebrow">For You</div>
-      <h2>こんな人に、おすすめ。</h2>
-    </div>
+    <h2 class="reveal">こんな人に、おすすめ。</h2>
     <div class="foryou-list reveal">
       <div class="fy">
         <div class="fy-ic">🔥</div>
-        <h4>出会いを、振り返りたい</h4>
-        <p>これまで出会ってきた人を、名鑑のように一覧で。誰と、いつ、どんな関係だったか。</p>
+        <h4>戦績を、振り返りたい</h4>
+        <p>出会ってきた人を名鑑のように一覧で。誰と、いつ、どんな関係だったか。</p>
       </div>
       <div class="fy">
         <div class="fy-ic">💪</div>
-        <h4>いつまでも、現役でいたい</h4>
-        <p>ペースを記録して、現役寿命を予測。コンディションの変化も、そっと見守る。</p>
+        <h4>これからも、現役でいたい</h4>
+        <p>現役でいるためには、自己管理から。ペースを記録し、現役寿命を予測する。</p>
       </div>
       <div class="fy">
-        <div class="fy-ic">🔒</div>
-        <h4>絶対に、知られたくない</h4>
-        <p>端末内で完結し、外部に送信しない。アプリロックで、あなた以外の目から守る。</p>
+        <div class="fy-ic">🗂️</div>
+        <h4>大切な思い出を、残したい</h4>
+        <p>記憶が薄れても、記録は残る。あなたの大切な出会いを、忘れないために。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COLLECT -->
-<section class="collect">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="collect-eyebrow">Collect</div>
-      <h2>続けるほど、<br>称号が集まっていく。</h2>
-      <p>記録を重ねるたびに、あなたの現役が階級になる。未取得のシルエットすら、次のゴールに。</p>
-    </div>
-    <div class="collect-badges reveal">
-      <div class="cb"><div class="ic">🐉</div><div class="nm">龍</div><div class="sub">現役寿命</div></div>
-      <div class="cb"><div class="ic">🏆</div><div class="nm">殿堂入り</div><div class="sub">累計</div></div>
-      <div class="cb"><div class="ic">✦</div><div class="nm">創造主</div><div class="sub">月の達成</div></div>
-      <div class="cb dim"><div class="ic">❔</div><div class="nm">???</div><div class="sub">未取得</div></div>
-    </div>
+<!-- PRIVACY -->
+<section class="privacy">
+  <div class="wrap reveal">
+    <div class="pi">🔒</div>
+    <h2>メモアプリでは、<br>守れない。</h2>
+    <p class="lead">最もプライベートな記録だから、プライバシーを設計の中心に。</p>
+    <p>記録はすべて<b>あなたの iPhone の中だけ</b>で処理され、外部に送信されません。アプリロックで、あなた以外の目から守ります。</p>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final" id="download">
   <div class="wrap reveal">
-    <h2>いつまでも、<br>現役で。</h2>
-    <p>あなたが出会ってきたすべてを、名簿に。</p>
+    <h2>ずっと、<br>現役。</h2>
+    <p>大切な出会いを、忘れないために。<br>今日から、Roster で。</p>
     <div class="hero-cta-row">
       <a href="#" class="store-badge">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
@@ -259,7 +267,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">Roster<span class="dot">.</span></div>
-        <p class="foot-tag">出会ってきたパートナーの名簿。いつまでも、現役で。</p>
+        <p class="foot-tag">あなたのパートナー名鑑。</p>
       </div>
       <nav class="foot-links">
         <a href="/privacy">プライバシーポリシー</a>
