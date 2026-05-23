@@ -67,6 +67,8 @@
   .hero{text-align:center;padding:180px 0 0;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
   .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
+  h1 .t1{letter-spacing:-0.15em;display:inline-block}
+  h1 .t2{display:inline-block}
   h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
   .hero-lead{font-size:clamp(16px,2vw,19px);color:var(--ink-2);max-width:26em;margin:36px auto 0;line-height:1.95;font-weight:300}
   .hero-lead b{color:var(--accent-2);font-weight:500}
@@ -78,13 +80,14 @@
   .store-badge .l{font-size:18px;font-weight:500;line-height:1.1}
   .hero-note{font-size:13px;color:var(--ink-faint);letter-spacing:.02em}
 
-  /* hero stage : 実機スクショ 2 台（上部を見せ下端フェード） */
-  .hero-stage{margin-top:72px;display:flex;justify-content:center;align-items:flex-start;gap:36px}
-  .device{position:relative;width:240px;border-radius:38px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 44px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:10px;flex-shrink:0}
-  .device .scr{height:380px;overflow:hidden;border-radius:30px;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent)}
-  .device img{width:100%;height:auto;display:block;border-radius:30px 30px 0 0}
-  .device.back{transform:translateY(34px) scale(.93) rotate(-2deg);opacity:.94;z-index:1}
-  .device.front{transform:translateY(8px);z-index:2}
+  /* hero stage : Figma 公式ベゼル入り端末画像（無加工・等倍・傾けない） */
+  .hero-stage{margin-top:80px;display:flex;justify-content:center;align-items:center;gap:28px}
+  .device{flex-shrink:0}
+  .device img{display:block;height:auto}
+  /* 2 台の相対サイズは維持。前面をやや大きく、背面をやや小さく＝自然な奥行き（傾けない） */
+  .device.front img{width:266px}
+  .device.back img{width:238px}
+  .device .cap{display:block;text-align:center;margin-top:18px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
 
   /* statement */
   .statement{padding:140px 0;text-align:center}
@@ -155,10 +158,8 @@
     .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
     .an-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}
     .hero-stage{gap:0;margin-top:56px}
-    .device{width:266px}
-    .device.front{transform:translateY(8px)}
-    .device .scr{height:360px}
     .device.back{display:none}
+    .device.front img{width:248px}
   }
 </style>
 </head>
@@ -173,7 +174,7 @@
 <header class="hero">
   <div class="wrap">
     <span class="eyebrow reveal">あなたのパートナー名鑑</span>
-    <h1 class="reveal">ずっと、<br>現役。<span class="ja">あなたの出会いを、忘れないために。</span></h1>
+    <h1 class="reveal"><span class="t1">ずっと、</span><br><span class="t2">現役。</span><span class="ja">あなたの出会いを、忘れないために。</span></h1>
     <p class="hero-lead reveal">出会ってきたパートナーを記録し、多角的に分析する。<br><b>パートナーマネジメントの決定版。</b></p>
     <div class="hero-cta-row reveal">
       <a href="#download" class="store-badge">
@@ -185,10 +186,10 @@
   </div>
   <div class="hero-stage reveal">
     <div class="device back">
-      <div class="scr"><img src="/screen-calendar.png" alt="Roster のカレンダー画面。月ごとの記録と達成度・満足度を一覧できる。" width="752" height="1568"></div>
+      <img src="/device-calendar.png" alt="Roster のカレンダー画面を iPhone に表示。月ごとの記録と達成度・満足度を一覧できる。" width="1126" height="2273">
     </div>
     <div class="device front">
-      <div class="scr"><img src="/screen-stats.png" alt="Roster Stats のランキング画面。累計回数・満足度などをパートナー別に分析。" width="759" height="1568"></div>
+      <img src="/device-stats.png" alt="Roster の Roster Stats 画面を iPhone に表示。パートナーをアクティブ／非アクティブ別に一覧。" width="1126" height="2273">
     </div>
   </div>
 </header>
@@ -196,8 +197,8 @@
 <!-- STATEMENT -->
 <section class="statement">
   <div class="wrap reveal">
-    <p>その出会いを、<span class="hl">忘れないために。</span></p>
-    <p class="sub">記憶はいつか薄れる。でも記録は、残る。あなたが出会ってきたすべてを、一冊の名鑑に。</p>
+    <p>あなたが出会ってきたすべてを、<br><span class="hl">一冊の名鑑に。</span></p>
+    <p class="sub">記憶はいつか薄れる。でも記録は、残る。</p>
   </div>
 </section>
 
@@ -207,7 +208,7 @@
     <div class="sec-head reveal">
       <div class="sec-eyebrow">Analyze</div>
       <h2 class="sec-title">パートナーを、<br>あらゆる角度で。</h2>
-      <p class="sec-lead">ただ記録するだけじゃない。多角的に分析して、これからの関係構築に役立てよう。</p>
+      <p class="sec-lead">ただ記録するだけじゃない。<br>多角的に分析して、これからの関係構築に役立てよう。</p>
     </div>
     <div class="an-grid">
       <div class="an reveal">
@@ -226,7 +227,7 @@
         <div class="an-ic">🗺️</div>
         <div class="demo">12<small> エリア</small></div>
         <h3>出身地マップ</h3>
-        <p>出会ってきた人を地図にプロット。あなたの行動範囲が、地図に浮かぶ。</p>
+        <p>パートナーの出身地を地図にプロット。あなたの出会いが、地図に浮かぶ。</p>
       </div>
       <div class="an reveal">
         <div class="an-ic">🧭</div>
@@ -267,7 +268,7 @@
   <div class="wrap reveal">
     <div class="pi">🔒</div>
     <h2>メモアプリでは、<br>守れない。</h2>
-    <p class="lead">最もプライベートな記録だから、プライバシーを設計の中心に。</p>
+    <p class="lead">最もプライベートな記録だから、<br>プライバシー保護を設計の中心に。</p>
     <p>記録はすべて<b>あなたの iPhone の中だけ</b>で処理され、外部に送信されません。アプリロックで、あなた以外の目から守ります。</p>
   </div>
 </section>
