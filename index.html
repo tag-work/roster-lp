@@ -65,14 +65,12 @@
 
   /* hero */
   .hero{text-align:center;padding:180px 0 0;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
-  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
+  .eyebrow{display:inline-block;font-family:var(--sans);font-size:clamp(17px,2.6vw,24px);letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:38px}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
   h1 .t1{letter-spacing:-0.15em;display:inline-block}
   h1 .t2{display:inline-block}
-  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
-  .hero-lead{font-size:clamp(16px,2vw,19px);color:var(--ink-2);max-width:26em;margin:36px auto 0;line-height:1.95;font-weight:300}
-  .hero-lead b{color:var(--accent-2);font-weight:500}
-  .hero-cta-row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:46px}
+  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:34px;color:var(--ink-2)}
+  .hero-cta-row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:56px}
   .store-badge{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);padding:15px 28px 15px 23px;border-radius:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 34px rgba(0,0,0,.4)}
   .store-badge:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(238,171,74,.18)}
   .store-badge svg{width:27px;height:27px}
@@ -174,8 +172,11 @@
 <header class="hero">
   <div class="wrap">
     <span class="eyebrow reveal">あなたのパートナー名鑑</span>
-    <h1 class="reveal"><span class="t1">ずっと、</span><br><span class="t2">現役。</span><span class="ja">あなたの出会いを、忘れないために。</span></h1>
-    <p class="hero-lead reveal">出会ってきたパートナーを記録し、多角的に分析する。<br><b>パートナーマネジメントの決定版。</b></p>
+    <h1 class="reveal">
+      <span class="t1">ずっと、</span><br>
+      <span class="t2">現役。</span>
+      <span class="ja">あなたの出会いを、忘れないために。</span>
+    </h1>
     <div class="hero-cta-row reveal">
       <a href="#download" class="store-badge">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
@@ -315,10 +316,7 @@
     if(nav){addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>30)});}
 
     var els=document.querySelectorAll('.reveal');
-    // IntersectionObserver 非対応なら何もしない（CSS既定で全表示のまま）
     if(!('IntersectionObserver' in window)){return;}
-
-    // ここまで来たらアニメーション有効化（要素を一旦透明に）
     document.documentElement.classList.add('js-reveal');
 
     var io=new IntersectionObserver(function(es){
@@ -332,7 +330,6 @@
 
     els.forEach(function(el){io.observe(el)});
 
-    // 保険1: ロード直後、すでに画面内にある要素は即出現
     function showInView(){
       els.forEach(function(el){
         var r=el.getBoundingClientRect();
@@ -342,7 +339,6 @@
     showInView();
     addEventListener('load', showInView);
 
-    // 保険2: 念のため、3秒後には全要素を強制表示（取りこぼし防止）
     setTimeout(function(){els.forEach(function(el){el.classList.add('in')});}, 3000);
   })();
 </script>
