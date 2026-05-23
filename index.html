@@ -56,15 +56,15 @@
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:1000px;margin:0 auto;padding:0 32px}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.72);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
-  nav.scrolled{border-bottom-color:var(--line);background:rgba(16,13,11,.9)}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.72);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+  #nav.scrolled{border-bottom-color:var(--line);background:rgba(16,13,11,.9)}
   .brand{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.04em;color:#fff}
   .brand .dot{color:var(--accent)}
   .nav-cta{font-size:13px;font-weight:500;letter-spacing:.03em;color:var(--bg);background:var(--accent);padding:9px 20px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}
   .nav-cta:hover{transform:translateY(-1px);background:var(--accent-2)}
 
   /* hero */
-  .hero{text-align:center;padding:180px 0 90px;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
+  .hero{text-align:center;padding:180px 0 120px;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
   .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:28px}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
   h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:26px;color:var(--ink-2)}
@@ -78,20 +78,13 @@
   .store-badge .l{font-size:18px;font-weight:500;line-height:1.1}
   .hero-note{font-size:13px;color:var(--ink-faint);letter-spacing:.02em}
 
-  .hero-stage{margin-top:76px;display:flex;justify-content:center}
-  .phone{position:relative;width:300px;height:618px;border-radius:48px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 50px 90px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:15px}
-  .phone-screen{width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#231b14,#120e0b);display:flex;flex-direction:column;padding:34px 24px}
-  .ps-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
-  .ps-title{font-family:var(--serif);font-size:26px;font-weight:400;margin:7px 0 22px;color:var(--ink)}
-  .ps-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-  .ps-row .pk{font-size:13px;color:var(--ink-2);font-weight:300}
-  .ps-row .pv{font-family:var(--serif);font-size:19px;color:var(--accent-2)}
-  .ps-card{background:linear-gradient(150deg,rgba(238,171,74,.12),rgba(238,171,74,.02));border:1px solid rgba(238,171,74,.18);border-radius:16px;padding:16px 16px 14px;margin:16px 0 14px}
-  .ps-card .k{font-size:11px;color:var(--ink-soft);letter-spacing:.04em}
-  .ps-card .v{font-family:var(--serif);font-size:30px;font-weight:400;color:var(--accent-2);line-height:1.15;margin-top:3px}
-  .ps-card .v small{font-size:13px;color:var(--ink-soft);font-family:var(--sans);font-weight:400}
-  .ps-map{flex:1;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink-soft);position:relative;overflow:hidden}
-  .ps-map .pin{position:absolute;font-size:15px}
+  /* hero stage : 実機スクショ 2 台 */
+  .hero-stage{margin-top:84px;display:flex;justify-content:center;align-items:flex-end;gap:36px}
+  .device{position:relative;width:218px;border-radius:36px;background:linear-gradient(160deg,#262019,#15110e);border:1px solid var(--line);box-shadow:0 44px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);padding:9px}
+  .device img{width:100%;display:block;border-radius:28px}
+  .device.back{transform:translateY(22px) scale(.93) rotate(-2deg);opacity:.94;z-index:1}
+  .device.front{z-index:2}
+  .device .cap{position:absolute;left:0;right:0;bottom:-32px;text-align:center;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
 
   /* statement */
   .statement{padding:140px 0;text-align:center}
@@ -155,6 +148,9 @@
   @media(max-width:680px){
     .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
     .an-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}
+    .hero-stage{gap:0;margin-top:64px}
+    .device{width:256px}
+    .device.back{display:none}
   }
 </style>
 </head>
@@ -180,22 +176,13 @@
     </div>
   </div>
   <div class="hero-stage reveal">
-    <div class="phone">
-      <div class="phone-screen">
-        <span class="ps-label">Partner Profile</span>
-        <span class="ps-title">パートナー分析</span>
-        <div class="ps-row"><span class="pk">累計回数</span><span class="pv">38</span></div>
-        <div class="ps-row"><span class="pk">累積投資額</span><span class="pv">¥124,000</span></div>
-        <div class="ps-row"><span class="pk">出会い経路</span><span class="pv">マッチング</span></div>
-        <div class="ps-row"><span class="pk">出身地</span><span class="pv">大阪</span></div>
-        <div class="ps-card"><div class="k">現役寿命の予測</div><div class="v">あと 23<small> 年</small></div></div>
-        <div class="ps-map">
-          <span class="pin" style="top:30%;left:55%">📍</span>
-          <span class="pin" style="top:55%;left:35%">📍</span>
-          <span class="pin" style="top:42%;left:68%">📍</span>
-          出身地マップ
-        </div>
-      </div>
+    <div class="device back">
+      <img src="/screen-calendar.png" alt="Roster のカレンダー画面。月ごとの記録と達成度・満足度を一覧できる。" width="752" height="1568">
+      <span class="cap">Calendar</span>
+    </div>
+    <div class="device front">
+      <img src="/screen-stats.png" alt="Roster Stats のランキング画面。累計回数・満足度などをパートナー別に分析。" width="759" height="1568">
+      <span class="cap">Roster Stats</span>
     </div>
   </div>
 </header>
@@ -304,6 +291,7 @@
       <nav class="foot-links">
         <a href="/privacy">プライバシーポリシー</a>
         <a href="/terms">利用規約</a>
+        <a href="/faq">よくある質問</a>
         <a href="mailto:hello@roster.ink">お問い合わせ</a>
       </nav>
     </div>
