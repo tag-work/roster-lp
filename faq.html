@@ -23,8 +23,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "記録したデータはどこに保存されますか？", "acceptedAnswer": { "@type": "Answer", "text": "すべてあなたのiPhoneの中（端末内）に保存されます。外部のサーバーに送信されることはありません。Roster開発運営チームを含め、第三者があなたの記録を見ることはできません。" } },
-    { "@type": "Question", "name": "サーバーや運営にデータが送られていませんか？", "acceptedAnswer": { "@type": "Answer", "text": "送られていません。Rosterはトラッキングを一切行わず、記録データを外部に送信しません。データはすべて端末内で完結する設計です。" } },
+    { "@type": "Question", "name": "記録したデータはどこに保存されますか？", "acceptedAnswer": { "@type": "Answer", "text": "あなたが記録したパートナー情報・活動記録・体調記録などの内容は、すべてあなたのiPhoneの中（端末内）に保存されます。これらの記録内容そのものが外部のサーバーに送信されることはありません。Roster開発運営チームを含め、第三者があなたの記録を見ることはできません。" } },
+    { "@type": "Question", "name": "サーバーや運営にデータが送られていませんか？", "acceptedAnswer": { "@type": "Answer", "text": "あなたが入力した記録の中身（パートナー情報や活動記録など）は外部に送信されません。これらは端末内で完結します。ただし、サービス改善のため、Firebase Analyticsを通じてあなた個人を特定しない匿名の利用情報（画面の利用状況・端末の種類・OSバージョンなど）のみを取得しています。広告識別子（IDFA）は取得せず、追跡も行いません。" } },
+    { "@type": "Question", "name": "利用情報の収集について教えてください", "acceptedAnswer": { "@type": "Answer", "text": "機能改善や品質向上のため、Google LLCが提供するFirebase Analyticsを利用して、匿名の利用情報のみを取得しています。具体的には、画面の利用状況、端末の種類・OSバージョン、IPアドレスから推定される国・地域などです。あなたが本アプリ内に記録したパートナー情報や活動記録などの内容は一切含まれません。詳細はプライバシーポリシーをご覧ください。" } },
     { "@type": "Question", "name": "他人にアプリを開かれても大丈夫ですか？", "acceptedAnswer": { "@type": "Answer", "text": "アプリロック機能があります。Face ID／Touch IDによる自動ロックと、アプリ切り替え時の画面ぼかしで、ふいに他人の目に触れることを防ぎます。" } },
     { "@type": "Question", "name": "生理予測日は医療的な判断ですか？", "acceptedAnswer": { "@type": "Answer", "text": "いいえ。入力された生理開始日と生理周期をもとに予測を表示しているだけで、医療的な診断・助言ではありません。体調や健康に関する判断は、医療機関にご相談ください。" } },
     { "@type": "Question", "name": "機種変更をしたらデータはどうなりますか？", "acceptedAnswer": { "@type": "Answer", "text": "現在は端末内のみにデータを保存しているため、機種変更時の自動引き継ぎには対応していません。iCloudによる同期は今後のアップデートで対応を予定しています。" } },
@@ -149,12 +150,17 @@
 
     <details open>
       <summary><span class="q">Q</span><span class="q-text">記録したデータはどこに保存されますか？</span><span class="chev"></span></summary>
-      <div class="ans">すべて<strong>あなたのiPhoneの中（端末内）</strong>に保存されます。外部のサーバーに送信されることはありません。Roster 開発運営チームを含め、第三者があなたの記録を見ることはできません。</div>
+      <div class="ans">あなたが記録した<strong>パートナー情報・活動記録・体調記録などの内容</strong>は、すべて<strong>あなたのiPhoneの中（端末内）</strong>に保存されます。これらの記録内容そのものが外部のサーバーに送信されることはありません。Roster 開発運営チームを含め、第三者があなたの記録を見ることはできません。</div>
     </details>
 
     <details>
       <summary><span class="q">Q</span><span class="q-text">サーバーや運営にデータが送られていませんか？</span><span class="chev"></span></summary>
-      <div class="ans">送られていません。Roster は<strong>トラッキングを一切行わず</strong>、記録データを外部に送信しません。データはすべて端末内で完結する設計です。<span class="note">だからこそ、「メモアプリでは、守れない。」をコンセプトにしています。</span></div>
+      <div class="ans">あなたが入力した<strong>記録の中身（パートナー情報や活動記録など）</strong>は外部に送信されません。これらは端末内で完結します。だからこそ、「メモアプリでは、守れない。」をコンセプトにしています。<span class="note">なお、サービス改善のため、あなた個人を特定しない匿名の利用情報のみを限定的に取得しています。広告識別子（IDFA）は取得せず、追跡も行いません。詳細は次の項目をご覧ください。</span></div>
+    </details>
+
+    <details>
+      <summary><span class="q">Q</span><span class="q-text">利用情報の収集について教えてください</span><span class="chev"></span></summary>
+      <div class="ans">機能改善や品質向上のため、Google LLC が提供する<strong>Firebase Analytics</strong>を利用して、匿名の利用情報のみを取得しています。具体的には、画面の利用状況、端末の種類・OS バージョン、IP アドレスから推定される国・地域などです。<span class="note">あなたが本アプリ内に記録したパートナー情報や活動記録などの内容は一切含まれません。詳細は<a class="inline" href="/privacy">プライバシーポリシー</a>をご覧ください。</span></div>
     </details>
 
     <details>
@@ -204,7 +210,7 @@
 
     <details>
       <summary><span class="q">Q</span><span class="q-text">どんな分析ができますか？</span><span class="chev"></span></summary>
-      <div class="ans">累計回数や満足度などの<strong>ランキング（Roster Stats）</strong>、出身地マップ、出会いの経路、そして「現役寿命予測」など、さまざまな切り口であなたの記録を眺められます。<span class="note">分析機能は Premium で解放されます。</span></div>
+      <div class="ans">累計回数や満足度などの<strong>ランキング(Roster Stats)</strong>、出身地マップ、出会いの経路、そして「現役寿命予測」など、さまざまな切り口であなたの記録を眺められます。<span class="note">分析機能は Premium で解放されます。</span></div>
     </details>
 
     <details>
@@ -214,7 +220,7 @@
 
     <details>
       <summary><span class="q">Q</span><span class="q-text">対応している端末・OS は？</span><span class="chev"></span></summary>
-      <div class="ans">iPhone（iOS 26.4 以降）に対応しています。年齢制限は 17+ です。</div>
+      <div class="ans">iPhone(iOS 26.4 以降)に対応しています。年齢制限は 17+ です。</div>
     </details>
 
     <div class="callout">
