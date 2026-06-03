@@ -50,13 +50,13 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#100d0b;--bg-2:#171310;--panel:#1e1916;--line:#2e2722;
     --ink:#f3ece2;--ink-2:#d6cdbf;--ink-soft:#a99e8e;--ink-faint:#8a8073;
     --accent:#eeab4a;--accent-2:#f2c47e;--accent-soft:#3a2c18;
-    --serif:'Fraunces',serif;--sans:'Zen Kaku Gothic New',sans-serif;
+    --sans:'Zen Kaku Gothic New',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -65,19 +65,15 @@
 
   #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.72);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
   #nav.scrolled{border-bottom-color:var(--line);background:rgba(16,13,11,.9)}
-  .brand{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.04em;color:#fff}
+  .brand{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:.02em;color:#fff}
   .brand .dot{color:var(--accent)}
   .nav-cta{font-size:13px;font-weight:500;letter-spacing:.03em;color:var(--bg);background:var(--accent);padding:9px 20px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}
   .nav-cta:hover{transform:translateY(-1px);background:var(--accent-2)}
 
-  /* hero */
-  .hero{text-align:center;padding:180px 0 0;background:radial-gradient(75% 50% at 50% 0%,rgba(238,171,74,.14),transparent 68%),linear-gradient(180deg,#161210,#100d0b 55%)}
-  .eyebrow{display:inline-block;font-family:var(--sans);font-size:clamp(17px,2.6vw,24px);letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:38px}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,108px);line-height:1.02;letter-spacing:.005em;color:var(--ink)}
-  h1 .t1{letter-spacing:-0.15em;display:inline-block}
-  h1 .t2{display:inline-block}
-  h1 .ja{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(19px,2.5vw,28px);letter-spacing:.04em;margin-top:34px;color:var(--ink-2)}
-  .hero-cta-row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:56px}
+  /* hero : Group_6.png 1枚絵で語るキービジュアル */
+  .hero{text-align:center;padding:96px 0 0;background:#000}
+  .hero-art{display:block;width:100%;max-width:1100px;margin:0 auto;height:auto}
+  .hero-cta-row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;padding:48px 32px 96px;background:#000}
   .store-badge{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);padding:15px 28px 15px 23px;border-radius:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 34px rgba(0,0,0,.4)}
   .store-badge:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(238,171,74,.18)}
   .store-badge svg{width:27px;height:27px}
@@ -85,18 +81,9 @@
   .store-badge .l{font-size:18px;font-weight:500;line-height:1.1}
   .hero-note{font-size:13px;color:var(--ink-faint);letter-spacing:.02em}
 
-  /* hero stage : Figma 公式ベゼル入り端末画像（無加工・等倍・傾けない） */
-  .hero-stage{margin-top:80px;display:flex;justify-content:center;align-items:center;gap:28px}
-  .device{flex-shrink:0}
-  .device img{display:block;height:auto}
-  /* 2 台の相対サイズは維持。前面をやや大きく、背面をやや小さく＝自然な奥行き（傾けない） */
-  .device.front img{width:266px}
-  .device.back img{width:238px}
-  .device .cap{display:block;text-align:center;margin-top:18px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
-
   /* statement */
   .statement{padding:140px 0;text-align:center}
-  .statement p{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,50px);line-height:1.4;letter-spacing:.005em;max-width:15em;margin:0 auto;color:var(--ink)}
+  .statement p{font-family:var(--sans);font-weight:500;font-size:clamp(28px,4.4vw,46px);line-height:1.5;letter-spacing:.02em;max-width:18em;margin:0 auto;color:var(--ink)}
   .statement .hl{color:var(--accent-2)}
   .statement .sub{font-family:var(--sans);font-weight:300;font-size:16px;line-height:2;color:var(--ink-2);max-width:32em;margin:38px auto 0}
 
@@ -104,7 +91,7 @@
   .analyze{padding:120px 0;background:var(--bg-2)}
   .sec-head{text-align:center;margin-bottom:64px}
   .sec-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:20px}
-  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.4vw,46px);line-height:1.25;letter-spacing:.005em}
+  .sec-title{font-family:var(--sans);font-weight:500;font-size:clamp(28px,4.4vw,42px);line-height:1.35;letter-spacing:.02em}
   .sec-lead{color:var(--ink-2);max-width:32em;margin:22px auto 0;font-size:16px;line-height:1.95;font-weight:300}
   .an-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .an{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px 30px;transition:transform .35s,border-color .35s}
@@ -112,12 +99,12 @@
   .an-ic{width:54px;height:54px;border-radius:15px;background:var(--accent-soft);display:grid;place-items:center;font-size:25px;margin-bottom:20px}
   .an h3{font-size:18px;font-weight:500;margin-bottom:8px}
   .an p{color:var(--ink-2);font-size:14px;line-height:1.85;font-weight:300}
-  .an .demo{font-family:var(--serif);font-size:24px;color:var(--accent-2);margin-bottom:6px;line-height:1.1}
-  .an .demo small{font-size:13px;color:var(--ink-soft);font-family:var(--sans)}
+  .an .demo{font-family:var(--sans);font-weight:700;font-size:22px;color:var(--accent-2);margin-bottom:6px;line-height:1.2;letter-spacing:.01em}
+  .an .demo small{font-size:13px;color:var(--ink-soft);font-family:var(--sans);font-weight:400}
 
   /* for-you */
   .foryou{padding:130px 0;text-align:center}
-  .foryou h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,46px);line-height:1.25;letter-spacing:.005em;margin-bottom:56px}
+  .foryou h2{font-family:var(--sans);font-weight:500;font-size:clamp(26px,4.4vw,42px);line-height:1.35;letter-spacing:.02em;margin-bottom:56px}
   .foryou-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .fy{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px 26px;text-align:left;transition:transform .35s,border-color .35s}
   .fy:hover{transform:translateY(-5px);border-color:rgba(238,171,74,.35)}
@@ -128,19 +115,19 @@
   /* privacy */
   .privacy{padding:130px 0;text-align:center;background:var(--bg-2)}
   .privacy .pi{font-size:44px;margin-bottom:24px}
-  .privacy h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,48px);line-height:1.3;letter-spacing:.005em;margin-bottom:20px}
+  .privacy h2{font-family:var(--sans);font-weight:500;font-size:clamp(26px,4.4vw,44px);line-height:1.4;letter-spacing:.02em;margin-bottom:20px}
   .privacy .lead{color:var(--ink);max-width:24em;margin:0 auto 14px;font-size:19px;line-height:1.7;font-weight:400}
   .privacy p{color:var(--ink-2);max-width:30em;margin:0 auto;font-size:15.5px;line-height:1.95;font-weight:300}
   .privacy p b{color:var(--accent-2);font-weight:500}
 
   /* final */
   .final{text-align:center;padding:150px 0;background:radial-gradient(65% 55% at 50% 0%,rgba(238,171,74,.12),transparent 68%),var(--bg)}
-  .final h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,76px);line-height:1.1;letter-spacing:.005em;margin-bottom:24px}
+  .final h2{font-family:var(--sans);font-weight:700;font-size:clamp(38px,6.4vw,68px);line-height:1.2;letter-spacing:.02em;margin-bottom:24px}
   .final p{color:var(--ink-2);font-size:17px;max-width:26em;margin:0 auto 42px;line-height:1.9;font-weight:300}
 
   footer{border-top:1px solid var(--line);padding:54px 0 64px;background:var(--bg-2)}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
-  .foot-brand{font-family:var(--serif);font-size:23px;font-weight:500;color:#fff}
+  .foot-brand{font-family:var(--sans);font-size:22px;font-weight:700;color:#fff;letter-spacing:.02em}
   .foot-brand .dot{color:var(--accent)}
   .foot-tag{color:var(--ink-soft);font-size:13.5px;margin-top:10px;max-width:24em;font-weight:300}
   .foot-links{display:flex;gap:30px;flex-wrap:wrap}
@@ -160,11 +147,10 @@
   }
 
   @media(max-width:680px){
-    .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}.hero{padding:140px 0 64px}
+    .statement{padding:96px 0}.analyze{padding:88px 0}.foryou{padding:90px 0}.privacy{padding:90px 0}.final{padding:100px 0}
+    .hero{padding:74px 0 0}
+    .hero-cta-row{padding:36px 24px 72px}
     .an-grid{grid-template-columns:1fr}.foryou-list{grid-template-columns:1fr}
-    .hero-stage{gap:0;margin-top:56px}
-    .device.back{display:none}
-    .device.front img{width:248px}
   }
 </style>
 </head>
@@ -175,30 +161,15 @@
   <a href="#download" class="nav-cta">入手する</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO : 1枚絵で語る -->
 <header class="hero">
-  <div class="wrap">
-    <span class="eyebrow reveal">あなたのパートナー名鑑</span>
-    <h1 class="reveal">
-      <span class="t1">ずっと、</span><br>
-      <span class="t2">現役。</span>
-      <span class="ja">あなたの出会いを、忘れないために。</span>
-    </h1>
-    <div class="hero-cta-row reveal">
-      <a href="https://apps.apple.com/app/id6772575584" class="store-badge" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
-        <span><span class="s">Download on the</span><span class="l">App Store</span></span>
-      </a>
-      <span class="hero-note">iOS 26.4 以降 / 17+ / 無料</span>
-    </div>
-  </div>
-  <div class="hero-stage reveal">
-    <div class="device back">
-      <img src="/device-calendar.png" alt="Roster のカレンダー画面を iPhone に表示。月ごとの記録と達成度・満足度を一覧できる。" width="1126" height="2273">
-    </div>
-    <div class="device front">
-      <img src="/device-stats.png" alt="Roster の Roster Stats 画面を iPhone に表示。パートナーをアクティブ／非アクティブ別に一覧。" width="1126" height="2273">
-    </div>
+  <img class="hero-art reveal" src="/mainvisual.png" alt="Roster — ずっと、現役。あなたの現役基準をベースに今のペースを可視化。プライベート記録／現役維持／パートナー名鑑。" width="2556" height="2796">
+  <div class="hero-cta-row reveal">
+    <a href="https://apps.apple.com/app/id6772575584" class="store-badge" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
+      <span><span class="s">Download on the</span><span class="l">App Store</span></span>
+    </a>
+    <span class="hero-note">iOS 26.4 以降 / 17+ / 無料</span>
   </div>
 </header>
 
@@ -286,7 +257,7 @@
   <div class="wrap reveal">
     <h2>ずっと、<br>現役。</h2>
     <p>大切な出会いを、忘れないために。<br>今日から、Roster で。</p>
-    <div class="hero-cta-row">
+    <div class="hero-cta-row" style="background:transparent;padding:0">
       <a href="https://apps.apple.com/app/id6772575584" class="store-badge" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.92-2.43-3.66zM14.77 5.5c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.67-1.1 1.76-.96 2.79 1.02.08 2.06-.51 2.7-1.26z"/></svg>
         <span><span class="s">Download on the</span><span class="l">App Store</span></span>
