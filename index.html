@@ -121,6 +121,22 @@
   .privacy p{color:var(--ink-2);max-width:30em;margin:0 auto;font-size:15.5px;line-height:1.95;font-weight:300}
   .privacy p b{color:var(--accent-2);font-weight:500}
 
+  /* usecases (30個の活用例) */
+  .usecases{padding:130px 0;background:var(--bg)}
+  .usecases-title{font-family:var(--sans);font-weight:500;font-size:clamp(28px,4.4vw,46px);line-height:1.35;letter-spacing:.02em;text-align:center;margin-bottom:64px;color:var(--ink)}
+  .usecases-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0;margin:0}
+  .usecases-grid li{font-family:var(--sans);font-weight:400;font-size:14.5px;line-height:1.75;color:var(--ink-2);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;transition:border-color .25s,background .25s,transform .25s,color .25s}
+  .usecases-grid li:hover{border-color:rgba(238,171,74,.35);background:#221a13;color:var(--ink);transform:translateY(-2px)}
+
+  @media(max-width:900px){
+    .usecases-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:560px){
+    .usecases{padding:96px 0}
+    .usecases-grid{grid-template-columns:1fr;gap:10px}
+    .usecases-grid li{font-size:14px;padding:18px 20px}
+  }
+
   /* final */
   .final{text-align:center;padding:150px 0;background:radial-gradient(65% 55% at 50% 0%,rgba(238,171,74,.12),transparent 68%),var(--bg)}
   .final h2{font-family:var(--sans);font-weight:700;font-size:clamp(38px,6.4vw,68px);line-height:1.2;letter-spacing:.02em;margin-bottom:24px}
@@ -250,6 +266,45 @@
     <h2>メモアプリでは、<br>守れない。</h2>
     <p class="lead">最もプライベートな記録だから、<br>プライバシー保護を設計の中心に。</p>
     <p>記録はすべて<b>あなたの iPhone の中だけ</b>で処理され、外部に送信されません。アプリロックで、あなた以外の目から守ります。</p>
+  </div>
+</section>
+
+<!-- USE CASES (30 個の活用例) -->
+<section class="usecases">
+  <div class="wrap">
+    <h2 class="usecases-title reveal">Rosterの活用例。</h2>
+    <ul class="usecases-grid reveal">
+      <li>「あの人、何年前だっけ」を、もう曖昧にしない。</li>
+      <li>「いつから?」と聞かれて、即答できる自分でいる。</li>
+      <li>5年前に一度だけ会った人の名前を、今日も覚えている。</li>
+      <li>久しぶりの連絡前に、前回の議事録を読み返す。</li>
+      <li>あの月、誰と誰が同時進行だったか。記憶ではなく、記録で。</li>
+      <li>別れの日も、人生の一行として残す。</li>
+      <li>一度きりだった人にも、敬意を込めて名前と日付を。</li>
+      <li>名前を思い出せない人は、もう作らない。</li>
+      <li>過去の出会いを年表として、ひと目で見渡す。</li>
+      <li>体感ではなく数字で、今までを棚卸しする。</li>
+      <li>自分は本当はどんなタイプが好きなのか、データで知る。</li>
+      <li>マッチングアプリと紹介、どっちが自分に合うか統計で出す。</li>
+      <li>出身地マップで、自分の出会いの偏りを地理で眺める。</li>
+      <li>関係が続く人と続かない人の傾向を、データで把握する。</li>
+      <li>季節ごとの自分の活動量を、グラフで振り返る。</li>
+      <li>関係にかけてきた累積投資額を、四半期ごとに確認する。</li>
+      <li>食事・プレゼント・旅行の総額を、各パートナー別に把握する。</li>
+      <li>「これは投資だったか、消費だったか」を、後から検証する。</li>
+      <li>月次の支出傾向を見て、来月のペース配分を考える。</li>
+      <li>パートナーごとの好き嫌いをメモして、次回に活かす。</li>
+      <li>記念日や節目を、忘れず丁寧に記録する。</li>
+      <li>同じ人との関係が深まっていく過程を、時系列で残す。</li>
+      <li>「次に会うのはいつ頃が適切か」をデータで判断する。</li>
+      <li>主力パートナーとの関係を、ベテランの数字で支える。</li>
+      <li>自分のコンディションと活動量の相関を、見つける。</li>
+      <li>体調と満足度の関係を、データで自己理解する。</li>
+      <li>現役寿命を意識して、ペース配分を見直す。</li>
+      <li>ずっと現役でいるための、自分だけのKPIを持つ。</li>
+      <li>数字を競うためではなく、自分を知るために続ける。</li>
+      <li>メモアプリでは守れないものを、ちゃんと守る場所。</li>
+    </ul>
   </div>
 </section>
 
