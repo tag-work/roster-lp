@@ -50,13 +50,14 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#100d0b;--bg-2:#171310;--panel:#1e1916;--line:#2e2722;
     --ink:#f3ece2;--ink-2:#d6cdbf;--ink-soft:#a99e8e;--ink-faint:#8a8073;
     --accent:#eeab4a;--accent-2:#f2c47e;--accent-soft:#3a2c18;
     --sans:'Zen Kaku Gothic New',sans-serif;
+    --serif:'Fraunces',serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -65,7 +66,7 @@
 
   #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;backdrop-filter:saturate(160%) blur(18px);background:rgba(16,13,11,.72);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
   #nav.scrolled{border-bottom-color:var(--line);background:rgba(16,13,11,.9)}
-  .brand{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:.02em;color:#fff}
+  .brand{font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:.04em;color:#fff}
   .brand .dot{color:var(--accent)}
   .nav-cta{font-size:13px;font-weight:500;letter-spacing:.03em;color:var(--bg);background:var(--accent);padding:9px 20px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}
   .nav-cta:hover{transform:translateY(-1px);background:var(--accent-2)}
@@ -127,7 +128,7 @@
 
   footer{border-top:1px solid var(--line);padding:54px 0 64px;background:var(--bg-2)}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
-  .foot-brand{font-family:var(--sans);font-size:22px;font-weight:700;color:#fff;letter-spacing:.02em}
+  .foot-brand{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;letter-spacing:.04em}
   .foot-brand .dot{color:var(--accent)}
   .foot-tag{color:var(--ink-soft);font-size:13.5px;margin-top:10px;max-width:24em;font-weight:300}
   .foot-links{display:flex;gap:30px;flex-wrap:wrap}
